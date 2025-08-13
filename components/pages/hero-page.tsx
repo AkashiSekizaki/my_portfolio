@@ -206,7 +206,7 @@ export function HeroPage() {
             <div>
               <h1 className="text-4xl font-bold mb-2">関﨑 証</h1>
               <p className="text-xl text-muted-foreground mb-6">
-                公立はこだて未来大学大学院 1年
+                公立はこだて未来大学大学院 博士(前期)課程 1年
               </p>
 
               {/* Profile Table */}
