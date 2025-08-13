@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Akashi Portfolio",
   description: "関﨑 証のポートフォリオサイト",
   icons: {
-    icon: "/my_icon.png",
+    icon: "my_icon.png",
   },
 };
 
