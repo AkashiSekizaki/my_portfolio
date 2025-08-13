@@ -212,10 +212,21 @@ export function HeroPage() {
           {/* Profile Information */}
           <div className="space-y-8">
             <div>
-              <h1 className="text-4xl font-bold mb-2">関﨑 証</h1>
-              <p className="text-xl text-muted-foreground mb-6">
-                公立はこだて未来大学大学院 博士(前期)課程 1年
-              </p>
+              <div className="flex items-center mb-4">
+                <Image
+                  src="/my_icon.png"
+                  alt="アイコン"
+                  width={60}
+                  height={60}
+                  className="rounded-full mr-4 border-2 border-primary/20 shadow-md"
+                />
+                <div>
+                  <h1 className="text-4xl font-bold">関﨑 証</h1>
+                  <p className="text-xl text-muted-foreground mt-1">
+                    公立はこだて未来大学大学院 博士(前期)課程 1年
+                  </p>
+                </div>
+              </div>
 
               {/* Profile Table */}
               <div className="bg-muted/30 rounded-lg p-6 mb-6">
