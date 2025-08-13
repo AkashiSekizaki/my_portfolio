@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
+// next/imageの代わりにCustomImageを使用
+import CustomImage from "@/components/ui/custom-image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ca } from "date-fns/locale";
 
 const photos = [
   {
@@ -161,7 +161,7 @@ export function HeroPage() {
           {/* Photo Slideshow */}
           <div className="relative">
             <div className="relative aspect-square max-w-md mx-auto overflow-hidden rounded-2xl shadow-2xl">
-              <Image
+              <CustomImage
                 src={photos[currentPhoto].src || "/placeholder.svg"}
                 alt="プロフィール写真"
                 fill
@@ -208,7 +208,7 @@ export function HeroPage() {
           <div className="space-y-8">
             <div>
               <div className="flex items-center mb-4">
-                <Image
+                <CustomImage
                   src="/my_icon.png"
                   alt="アイコン"
                   width={60}

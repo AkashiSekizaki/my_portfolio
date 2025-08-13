@@ -6,25 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ActivityModal } from "@/components/activity-modal";
 import { Eye, ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
-
-interface Activity {
-  title: string;
-  image: string;
-  description: string;
-  overview: string; // string | undefined から string に変更
-  technologies?: string[];
-  innovations?: string[];
-  learnings?: string[];
-  achievements?: string[];
-  tags: string[];
-  links?: {
-    github?: string;
-    demo?: string;
-    paper?: string;
-    presentation?: string;
-  };
-}
+import CustomImage from "@/components/ui/custom-image";
+// 共通の型をインポート
+import type { Activity } from "@/data/activities";
 
 interface SlidingRelatedActivitiesProps {
   title: string;
@@ -121,11 +105,11 @@ export function SlidingRelatedActivities({
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-12">
           {visibleActivities.map((activity, index) => (
             <Card
-              key={`${activity.title}-${index}`}
+              key={`${activity.id}-${index}`}
               className="h-full group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2"
             >
               <div className="relative aspect-video overflow-hidden">
-                <Image
+                <CustomImage
                   src={activity.image || "/placeholder.svg"}
                   alt={activity.title}
                   fill
@@ -153,7 +137,7 @@ export function SlidingRelatedActivities({
                   {activity.description}
                 </p>
                 <div className="flex flex-wrap gap-1">
-                  {activity.tags.slice(0, 3).map((tag) => (
+                  {activity.technologies?.slice(0, 3).map((tag) => (
                     <Badge
                       key={tag}
                       variant="secondary"
@@ -166,11 +150,12 @@ export function SlidingRelatedActivities({
                       {tag}
                     </Badge>
                   ))}
-                  {activity.tags.length > 3 && (
-                    <Badge variant="outline" className="text-xs">
-                      +{activity.tags.length - 3}
-                    </Badge>
-                  )}
+                  {activity.technologies &&
+                    activity.technologies.length > 3 && (
+                      <Badge variant="outline" className="text-xs">
+                        +{activity.technologies.length - 3}
+                      </Badge>
+                    )}
                 </div>
               </CardContent>
             </Card>
