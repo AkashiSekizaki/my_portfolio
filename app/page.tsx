@@ -8,12 +8,22 @@ import { LeadershipPage } from "@/components/pages/leadership-page";
 import { ResearchPage } from "@/components/pages/research-page";
 import { LearningPage } from "@/components/pages/learning-page";
 import { Footer } from "@/components/footer";
+import { ActivityModal } from "@/components/activity-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { activities } from "@/data/activities";
+import { mainContents } from "@/data/main-contents";
+import type { SearchResult } from "@/types/search";
+import type { Activity } from "@/data/activities";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState("hero");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedActivity, setSelectedActivity] = useState<Activity | null>(
+    null
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const pageVariants = {
     initial: { opacity: 0, x: 100 },
@@ -35,6 +45,29 @@ export default function Home() {
     }, 300);
   };
 
+  const handleSearchResult = (result: SearchResult) => {
+    console.log("検索結果クリック:", result);
+
+    if (result.type === "main" && result.page) {
+      // メインコンテンツの場合、対応するページに遷移
+      console.log("ページ遷移:", result.page);
+      handlePageChange(result.page);
+    } else if (result.type === "activity") {
+      // アクティビティの場合、該当のモーダルを開く
+      const activity = activities.find((a) => a.id === result.id);
+      if (activity) {
+        console.log("アクティビティモーダル開く:", activity);
+        setSelectedActivity(activity);
+        setIsModalOpen(true);
+      }
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedActivity(null);
+  };
+
   const renderPage = () => {
     switch (currentPage) {
       case "hero":
@@ -54,7 +87,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header currentPage={currentPage} onPageChange={handlePageChange} />
+      <Header
+        currentPage={currentPage}
+        onPageChange={handlePageChange}
+        selectedTags={selectedTags}
+        onTagsChange={setSelectedTags}
+        onSearchResult={handleSearchResult}
+      />
 
       {/* ページ遷移時の顔アイコン */}
       <AnimatePresence>
@@ -97,6 +136,14 @@ export default function Home() {
           </motion.div>
         </AnimatePresence>
       </main>
+
+      {/* 検索結果のアクティビティモーダル */}
+      <ActivityModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        activity={selectedActivity}
+      />
+
       <Footer />
     </div>
   );

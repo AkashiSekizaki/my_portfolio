@@ -26,9 +26,18 @@ const navItems = [
 interface HeaderProps {
   currentPage: string;
   onPageChange: (page: string) => void;
+  selectedTags?: string[];
+  onTagsChange?: (tags: string[]) => void;
+  onSearchResult?: (result: any) => void;
 }
 
-export function Header({ currentPage, onPageChange }: HeaderProps) {
+export function Header({
+  currentPage,
+  onPageChange,
+  selectedTags = [],
+  onTagsChange,
+  onSearchResult,
+}: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [selectedActivity, setSelectedActivity] = useState<any>(null);
@@ -69,75 +78,40 @@ export function Header({ currentPage, onPageChange }: HeaderProps) {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center">
-          <div className="mr-4 flex ml-4">
-            <a
-              className="mr-6 flex items-center space-x-2 cursor-pointer"
-              onClick={() => handleNavClick("hero")}
-            >
-              <span className="font-bold text-xl">Akashi Sekizaki</span>
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            {navItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.page)}
-                  className={`flex items-center space-x-2 transition-colors hover:text-foreground/80 ${
-                    currentPage === item.page
-                      ? "text-primary font-semibold"
-                      : "text-foreground/60"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span>{item.name}</span>
-                </button>
-              );
-            })}
-          </nav>
-
-          {/* Search Bar */}
-          <div className="ml-auto mr-4">
-            <SearchBar
-              onResultClick={handleSearchResult}
-              selectedTags={searchTags}
-              onTagsChange={setSearchTags}
-            />
-          </div>
-
-          {/* Mobile Navigation */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">メニューを開く</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <nav className="flex flex-col space-y-4 mt-8">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center space-x-8">
+              <h1 className="text-xl font-bold">Portfolio</h1>
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex space-x-6">
                 {navItems.map((item) => {
                   const Icon = item.icon;
                   return (
-                    <button
+                    <Button
                       key={item.name}
+                      variant={currentPage === item.page ? "default" : "ghost"}
                       onClick={() => handleNavClick(item.page)}
-                      className={`flex items-center space-x-2 text-lg font-medium transition-colors hover:text-foreground/80 text-left ${
-                        currentPage === item.page ? "text-primary" : ""
-                      }`}
+                      className="relative"
                     >
-                      <Icon className="h-5 w-5" />
-                      <span>{item.name}</span>
-                    </button>
+                      {item.name}
+                    </Button>
                   );
                 })}
               </nav>
-            </SheetContent>
-          </Sheet>
+            </div>
+
+            {/* Search Bar */}
+            <div className="flex items-center space-x-4">
+              {onSearchResult && (
+                <SearchBar
+                  onResultClick={onSearchResult}
+                  selectedTags={selectedTags}
+                  onTagsChange={onTagsChange}
+                />
+              )}
+            </div>
+          </div>
         </div>
       </header>
 
