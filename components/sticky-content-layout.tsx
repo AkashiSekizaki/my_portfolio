@@ -9,7 +9,7 @@ import {
   Github,
   FileText,
   Flag,
-  X,
+  Triangle,
   Tag,
   PenLine,
   ThumbsUp,
@@ -96,7 +96,7 @@ export function StickyContentLayout({
 
                 <div>
                   <h4 className="font-semibold mb-4 text-xl flex items-center">
-                    <X className="h-5 w-5 mr-2" />
+                    <Triangle className="h-5 w-5 mr-2" />
                     苦労したこと
                   </h4>
                   <p className="text-muted-foreground leading-relaxed">
