@@ -110,7 +110,7 @@ export default function Home() {
               className="relative w-100 h-100 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
             >
               <Image
-                src="/my_icon.png"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/my_icon.png`}
                 alt="アイコン"
                 fill
                 className="object-cover"
