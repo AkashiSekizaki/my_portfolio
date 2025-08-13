@@ -27,7 +27,7 @@ export const mainContents: MainContent[] = [
       { src: "/kabereco-start.png", caption: "スタート画面" },
       { src: "/kabereco-select.png", caption: "壁紙選択画面" },
       { src: "/kabereco-detail.png", caption: "壁紙の詳細" },
-      { src: "/kabereco-result.png", caption: "診断結果" },
+      { src: "kabereco-result.png", caption: "診断結果" },
     ],
     overview:
       "輸入壁紙販売店向けのアプリのチーム開発．店員さんはお客さんとのコミュニケーションを重視しているが，お客さんが自身の理想の部屋を言語化できないことが障害になっていた．そこで，潜在的な好みに基づいて推薦を行うアプリを開発した．4択で好きな壁紙を選んでもらうことを繰り返すことで，8000枚の壁紙から大まかな好みを割り出し，その例を表示する．",

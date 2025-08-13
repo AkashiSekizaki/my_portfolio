@@ -10,7 +10,8 @@ import { LearningPage } from "@/components/pages/learning-page";
 import { Footer } from "@/components/footer";
 import { ActivityModal } from "@/components/activity-modal";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+// Image を CustomImage に変更
+import CustomImage from "@/components/ui/custom-image";
 import { activities } from "@/data/activities";
 // 同じ型定義をインポート
 import type { SearchResult } from "@/types/search";
@@ -109,7 +110,7 @@ export default function Home() {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="relative w-100 h-100 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
             >
-              <Image
+              <CustomImage
                 src="/my_icon.png"
                 alt="アイコン"
                 fill
