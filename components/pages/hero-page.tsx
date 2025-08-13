@@ -1,107 +1,155 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const photos = [
-  { src: "/professional-headshot.png", caption: "プロフェッショナルな環境での一枚" },
-  { src: "/coding-workspace.png", caption: "集中してコーディングに取り組む様子" },
+  {
+    src: "/professional-headshot.png",
+    caption: "プロフェッショナルな環境での一枚",
+  },
+  {
+    src: "/coding-workspace.png",
+    caption: "集中してコーディングに取り組む様子",
+  },
   { src: "/team-collaboration.png", caption: "チームメンバーとの協力作業" },
-]
+];
 
 const profileData = [
-  { label: "出身", value: "東京都" },
-  { label: "卒業予定", value: "2025年3月" },
-  { label: "趣味", value: "プログラミング、読書、映画鑑賞" },
-  { label: "喜び", value: "人の役に立つこと・喜んでもらうこと" },
-]
+  { label: "出身", value: "北海道函館市" },
+  { label: "卒業予定", value: "2027年3月" },
+  { label: "趣味", value: "ダイビング、旅行、グルメ、コーヒー" },
+  { label: "喜び", value: "人に喜んでもらうとき、成果が出たとき" },
+];
 
 // 学歴データ
 const educationHistory = [
   {
-    year: "2019年3月",
-    title: "○○中学校 卒業",
+    year: "2018年3月",
+    title: "北海道教育大学附属函館中学校 卒業",
     type: "education",
   },
   {
-    year: "2022年3月",
-    title: "○○高等学校 卒業",
+    year: "2021年3月",
+    title: "北海道函館中部高等学校 卒業",
     type: "education",
   },
   {
     year: "2025年3月",
-    title: "○○大学 情報工学科 卒業予定",
+    title:
+      "公立はこだて未来大学 システム情報科学部情報アーキテクチャ学科 高度ICTコース 卒業",
     type: "education",
   },
   {
     year: "2025年4月",
-    title: "○○大学大学院 入学予定",
+    title:
+      "公立はこだて未来大学大学院 システム情報科学研究科システム情報科学専攻高度ICT領域 入学",
     type: "education",
   },
   {
     year: "2027年3月",
-    title: "○○大学大学院 修了予定",
+    title: "上記卒業予定",
     type: "education",
   },
-]
+];
 
 // イベント履歴
 const eventHistory = [
   {
-    year: "2021年4月",
-    title: "大学入学",
-    description: "情報工学科に入学。プログラミングの基礎を学び始める。\n初めてのプログラミング言語としてPythonを習得。",
+    year: "2018年8月",
+    title: "全国JOCジュニアオリンピックカップ夏季水泳競技大会 出場",
+    description:
+      "100m×4 フリーリレーで出場。\nチームならさらに大きな成果を挙げられることを実感する。",
   },
   {
-    year: "2022年4月",
-    title: "プログラミングサークル参加",
-    description: "大学のプログラミングサークルに参加し、チーム開発を経験。\nWebアプリケーション開発の基礎を学ぶ。",
+    year: "2019年12月",
+    title: "ダイビングのライセンス取得",
+    description:
+      "「海」へ強く興味を持つようになる。\n海×ITの研究（マリンIT）の研究ができる公立はこだて未来大学への進学を決心。",
+  },
+  {
+    year: "2022年5月",
+    title: "学内の学習支援組織（メタ学習ラボ）へ所属",
+    description:
+      "自身がプログラミングで苦労した経験から、学習支援活動を始める。\n学習支援スキル・コミュニケーションスキルなどを学び始める。",
+  },
+  {
+    year: "2022年10月",
+    title: "学内ハッカソン初参加・最優秀賞",
+    description:
+      "実践的なものづくりの難しさを知る。\n「プログラミング」ではない「開発」を初めて体験。",
   },
   {
     year: "2022年12月",
-    title: "初のハッカソン参加",
+    title: "学内ハッカソン サイボーズ賞受賞＆挫折経験",
     description:
-      "学内ハッカソンに参加し、チームでアプリを開発。\n48時間という限られた時間での開発の難しさと楽しさを体験。",
+      "開発力のあるメンバーに頼り切りで終わってしまう。\n悔しさから本格的に開発力をつけると決意する。",
   },
   {
     year: "2023年4月",
-    title: "研究室配属",
-    description: "AI・機械学習研究室に配属。深層学習の研究を開始。\n論文読解とプログラム実装のスキルを向上。",
-  },
-  {
-    year: "2023年8月",
-    title: "インターンシップ参加",
+    title: "「高度ICTコース」へ編入＆開発活動開始",
     description:
-      "IT企業でのインターンシップに参加。実際の開発現場を経験。\nアジャイル開発手法とチームワークの重要性を学ぶ。",
+      "ハッカソンの悔しさから、大学院一貫で開発・マネジメントを実践的に学ぶことのできる学内のコースに編入。\n課外活動のチーム開発活動などに参加。",
   },
   {
-    year: "2024年4月",
-    title: "卒業研究開始",
-    description: "自然言語処理をテーマとした卒業研究を開始。\n研究の進め方と論文執筆のスキルを習得中。",
+    year: "2024年2月",
+    title: "北海道アプリコンテスト 北海道経済産業局長賞 受賞",
+    description:
+      "輸入壁紙販売店向けのアプリケーションで受賞。\n店舗への導入・FBを受けての改善などの実績が高く評価される。",
   },
-]
+  {
+    year: "2024年8月",
+    title: "課外活動の学内発表で特別賞 受賞",
+    description:
+      "15名チームメンバーの協力と、立ち上げから半年の取り組みが評価される。",
+  },
+  {
+    year: "2024年10月",
+    title: "リーダーとしてハッカソンに参加＆CyberAgent賞 受賞",
+    description:
+      "プログラミング歴半年の1年生2名とハッカソンに参加。\nリーダーとしてチームづくりを意識。取り組みとプロダクト提案が評価される。",
+  },
+  {
+    year: "2024年12月",
+    title: "ハッカソンのメンターを経験",
+    description:
+      "開発×学習支援スキルを買ってもらい、学内ハッカソンのメンターとして参加。\nハッカソンの挫折を与えてくれた人が運営メンバーのハッカソンであったので、恩返しができた。",
+  },
+  {
+    year: "2025年4月",
+    title: "活動の中心的役割を経験",
+    description:
+      "学内の学習支援組織（メタ学習ラボ）の学生リーダー、課外活動のチームのリーダー。\n共同研究の立ち上げ、学内イベントの企画などを経験。",
+  },
+  {
+    year: "2025年8月",
+    title: "課外活動の学内発表で特別賞 受賞",
+    description:
+      "15名チームメンバーと共に、立ち上げから半年の取り組みが評価される。",
+  },
+];
 
 export function HeroPage() {
-  const [currentPhoto, setCurrentPhoto] = useState(0)
+  const [currentPhoto, setCurrentPhoto] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentPhoto((prev) => (prev + 1) % photos.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [])
+      setCurrentPhoto((prev) => (prev + 1) % photos.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const nextPhoto = () => {
-    setCurrentPhoto((prev) => (prev + 1) % photos.length)
-  }
+    setCurrentPhoto((prev) => (prev + 1) % photos.length);
+  };
 
   const prevPhoto = () => {
-    setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length)
-  }
+    setCurrentPhoto((prev) => (prev - 1 + photos.length) % photos.length);
+  };
 
   return (
     <div className="py-20 bg-gradient-to-br from-background to-muted/20">
@@ -117,7 +165,9 @@ export function HeroPage() {
                 className="object-cover transition-opacity duration-500"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <p className="text-white text-sm font-medium">{photos[currentPhoto].caption}</p>
+                <p className="text-white text-sm font-medium">
+                  {photos[currentPhoto].caption}
+                </p>
               </div>
               <Button
                 variant="ghost"
@@ -141,7 +191,9 @@ export function HeroPage() {
                 <button
                   key={index}
                   className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentPhoto ? "bg-primary" : "bg-muted-foreground/30"
+                    index === currentPhoto
+                      ? "bg-primary"
+                      : "bg-muted-foreground/30"
                   }`}
                   onClick={() => setCurrentPhoto(index)}
                 />
@@ -152,16 +204,25 @@ export function HeroPage() {
           {/* Profile Information */}
           <div className="space-y-8">
             <div>
-              <h1 className="text-4xl font-bold mb-2">田中 太郎</h1>
-              <p className="text-xl text-muted-foreground mb-6">情報工学科 4年生</p>
+              <h1 className="text-4xl font-bold mb-2">
+                関﨑 証（せきざき あかし）
+              </h1>
+              <p className="text-xl text-muted-foreground mb-6">
+                公立はこだて未来大学大学院 1年
+              </p>
 
               {/* Profile Table */}
               <div className="bg-muted/30 rounded-lg p-6 mb-6">
                 <table className="w-full">
                   <tbody>
                     {profileData.map((item, index) => (
-                      <tr key={index} className="border-b border-muted-foreground/20 last:border-b-0">
-                        <td className="py-3 pr-6 font-medium text-muted-foreground w-32">{item.label}：</td>
+                      <tr
+                        key={index}
+                        className="border-b border-muted-foreground/20 last:border-b-0"
+                      >
+                        <td className="py-3 pr-6 font-medium text-muted-foreground w-32">
+                          {item.label}：
+                        </td>
                         <td className="py-3 text-foreground">{item.value}</td>
                       </tr>
                     ))}
@@ -171,13 +232,19 @@ export function HeroPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-3 text-lg">主な実績</h3>
+              <h3 className="font-semibold mb-3 text-lg">主要な実績</h3>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">ハッカソン3回参加</Badge>
-                <Badge variant="secondary">学習支援100時間以上</Badge>
-                <Badge variant="secondary">オープンキャンパス3年連続参加</Badge>
-                <Badge variant="secondary">研究発表5回実施</Badge>
-                <Badge variant="secondary">学内研究発表会最優秀賞</Badge>
+                <Badge variant="secondary">
+                  北海道アプリコンテスト 北海道経済産業局長賞 受賞
+                </Badge>
+                <Badge variant="secondary">
+                  ITTPC CRLA レベル1チューター資格 取得
+                </Badge>
+                <Badge variant="secondary">
+                  全国JOCジュニアオリンピック出場
+                </Badge>
+                <Badge variant="secondary">未来大学賞 複数受賞</Badge>
+                <Badge variant="secondary">学内ハッカソン 複数受賞</Badge>
               </div>
             </div>
           </div>
@@ -191,8 +258,13 @@ export function HeroPage() {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-4">
               {educationHistory.map((item, index) => (
-                <div key={index} className="flex items-center p-4 bg-muted/20 rounded-lg border-l-4 border-primary">
-                  <div className="flex-shrink-0 w-24 text-sm font-medium text-primary">{item.year}</div>
+                <div
+                  key={index}
+                  className="flex items-center p-4 bg-muted/20 rounded-lg border-l-4 border-primary"
+                >
+                  <div className="flex-shrink-0 w-24 text-sm font-medium text-primary">
+                    {item.year}
+                  </div>
                   <div className="flex-1 ml-6">
                     <h3 className="font-semibold text-lg">{item.title}</h3>
                   </div>
@@ -216,18 +288,30 @@ export function HeroPage() {
                 {eventHistory.map((event, index) => (
                   <div
                     key={index}
-                    className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                    className={`relative flex items-center ${
+                      index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
                   >
                     {/* Timeline dot */}
                     <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-primary rounded-full border-2 border-background z-10"></div>
 
                     {/* Content */}
-                    <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+                    <div
+                      className={`ml-12 md:ml-0 md:w-1/2 ${
+                        index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                      }`}
+                    >
                       <Card className="shadow-md hover:shadow-lg transition-shadow">
                         <CardContent className="p-6">
-                          <div className="text-sm text-primary font-medium mb-2">{event.year}</div>
-                          <h3 className="text-lg font-semibold mb-3">{event.title}</h3>
-                          <p className="text-muted-foreground whitespace-pre-line">{event.description}</p>
+                          <div className="text-sm text-primary font-medium mb-2">
+                            {event.year}
+                          </div>
+                          <h3 className="text-lg font-semibold mb-3">
+                            {event.title}
+                          </h3>
+                          <p className="text-muted-foreground whitespace-pre-line">
+                            {event.description}
+                          </p>
                         </CardContent>
                       </Card>
                     </div>
@@ -239,5 +323,5 @@ export function HeroPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

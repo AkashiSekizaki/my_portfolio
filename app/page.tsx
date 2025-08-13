@@ -1,56 +1,56 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { HeroPage } from "@/components/pages/hero-page"
-import { DevelopmentPage } from "@/components/pages/development-page"
-import { LeadershipPage } from "@/components/pages/leadership-page"
-import { ResearchPage } from "@/components/pages/research-page"
-import { LearningPage } from "@/components/pages/learning-page"
-import { Footer } from "@/components/footer"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { HeroPage } from "@/components/pages/hero-page";
+import { DevelopmentPage } from "@/components/pages/development-page";
+import { LeadershipPage } from "@/components/pages/leadership-page";
+import { ResearchPage } from "@/components/pages/research-page";
+import { LearningPage } from "@/components/pages/learning-page";
+import { Footer } from "@/components/footer";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useState("hero")
-  const [isTransitioning, setIsTransitioning] = useState(false)
+  const [currentPage, setCurrentPage] = useState("hero");
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const pageVariants = {
     initial: { opacity: 0, x: 100 },
     in: { opacity: 1, x: 0 },
     out: { opacity: 0, x: -100 },
-  }
+  };
 
   const pageTransition = {
-    type: "tween",
-    ease: "anticipate",
+    type: "tween" as const,
+    ease: "anticipate" as const,
     duration: 0.5,
-  }
+  };
 
   const handlePageChange = (newPage: string) => {
-    setIsTransitioning(true)
+    setIsTransitioning(true);
     setTimeout(() => {
-      setCurrentPage(newPage)
-      setIsTransitioning(false)
-    }, 200)
-  }
+      setCurrentPage(newPage);
+      setIsTransitioning(false);
+    }, 200);
+  };
 
   const renderPage = () => {
     switch (currentPage) {
       case "hero":
-        return <HeroPage />
+        return <HeroPage />;
       case "development":
-        return <DevelopmentPage />
+        return <DevelopmentPage />;
       case "leadership":
-        return <LeadershipPage />
+        return <LeadershipPage />;
       case "research":
-        return <ResearchPage />
+        return <ResearchPage />;
       case "learning":
-        return <LearningPage />
+        return <LearningPage />;
       default:
-        return <HeroPage />
+        return <HeroPage />;
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -72,7 +72,12 @@ export default function Home() {
               transition={{ delay: 0.1, duration: 0.4 }}
               className="relative w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
             >
-              <Image src="/professional-headshot.png" alt="笑顔の写真" fill className="object-cover" />
+              <Image
+                src="/professional-headshot.png"
+                alt="笑顔の写真"
+                fill
+                className="object-cover"
+              />
             </motion.div>
           </motion.div>
         )}
@@ -94,5 +99,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }
