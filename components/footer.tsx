@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Mail, Github, Linkedin, Twitter } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 
 export function Footer() {
   return (
@@ -13,7 +13,7 @@ export function Footer() {
               お気軽にご連絡ください
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              新卒エンジニアとして、チャレンジングな環境で成長していきたいと考えています。
+              バリバリ働ける20代のうちに、開発からマネジメントまで幅広い経験を積みたいと考えています。
               ご質問やお話の機会がございましたら、お気軽にお声がけください。
             </p>
           </div>
@@ -23,16 +23,23 @@ export function Footer() {
               variant="outline"
               size="sm"
               className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-              onClick={() => window.open("https://mail.google.com/mail/?view=cm&fs=1&to=tanaka@example.com", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=g2125042@fun.ac.jp",
+                  "_blank"
+                )
+              }
             >
               <Mail className="h-4 w-4 mr-2" />
-              tanaka@example.com
+              g2125042@fun.ac.jp
             </Button>
             <Button
               variant="outline"
               size="sm"
               className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-              onClick={() => window.open("https://github.com/tanaka-taro", "_blank")}
+              onClick={() =>
+                window.open("https://github.com/AkashiSekizaki", "_blank")
+              }
             >
               <Github className="h-4 w-4 mr-2" />
               GitHub
@@ -41,19 +48,10 @@ export function Footer() {
               variant="outline"
               size="sm"
               className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-              onClick={() => window.open("https://linkedin.com/in/tanaka-taro", "_blank")}
-            >
-              <Linkedin className="h-4 w-4 mr-2" />
-              LinkedIn
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
               onClick={() =>
                 window.open(
-                  "https://twitter.com/intent/tweet?text=田中太郎のポートフォリオをチェック！&url=https://portfolio.tanaka-taro.com",
-                  "_blank",
+                  "https://twitter.com/intent/tweet?text=関﨑証のポートフォリオをチェック！&url=https://www.fun.ac.jp/",
+                  "_blank"
                 )
               }
             >
@@ -63,10 +61,10 @@ export function Footer() {
           </div>
 
           <div className="pt-8 border-t border-muted-foreground/20 text-sm text-muted-foreground">
-            <p>&copy; 2024 田中太郎. All rights reserved.</p>
+            <p>&copy; 2025 関﨑証. All rights reserved.</p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
