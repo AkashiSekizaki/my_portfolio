@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Github, Share } from "lucide-react";
 
 export function Footer() {
   return (
@@ -55,7 +55,7 @@ export function Footer() {
                 )
               }
             >
-              <Twitter className="h-4 w-4 mr-2" />
+              <Share className="h-4 w-4 mr-2" />
               Xでシェア
             </Button>
           </div>
