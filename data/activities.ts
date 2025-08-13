@@ -36,7 +36,7 @@ export const activities: Activity[] = [
   {
     id: "fishing-app",
     title: "琵琶湖漁業者向けアプリ開発",
-    image: "/琵琶湖アプリ.png",
+    image: "琵琶湖アプリ.png",
     description: "地域課題解決を目指したアプリ開発",
     overview:
       "琵琶湖の漁業者向けのアプリの開発．船跡の共有や漁獲効率を出すことで，漁に役立ててもらうことを目指したが，受け入れには課題が残りました．",
@@ -49,7 +49,7 @@ export const activities: Activity[] = [
   {
     id: "hackathon-participation",
     title: "学内ハッカソン・初挑戦",
-    image: "/",
+    image: "",
     description: "ハッカソン初挑戦",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -61,7 +61,7 @@ export const activities: Activity[] = [
   {
     id: "ecommerce-site",
     title: "P2hacks2022",
-    image: "/",
+    image: "",
     description: "ハッカソン2回目の挑戦",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -75,7 +75,7 @@ export const activities: Activity[] = [
   {
     id: "team-management",
     title: "おもしろサイトコンテスト",
-    image: "/",
+    image: "",
     description: "おもしろサイトコンテストの開催",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -87,7 +87,7 @@ export const activities: Activity[] = [
   {
     id: "event-planning",
     title: "comming soon",
-    image: "/",
+    image: "",
     description: "comming soon",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -101,7 +101,7 @@ export const activities: Activity[] = [
   {
     id: "ml-research",
     title: "comming soon",
-    image: "/",
+    image: "",
     description: "comming soon",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -113,7 +113,7 @@ export const activities: Activity[] = [
   {
     id: "data-analysis",
     title: "comming soon",
-    image: "/",
+    image: "",
     description: "comming soon",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -127,7 +127,7 @@ export const activities: Activity[] = [
   {
     id: "tutoring-system",
     title: "comming soon",
-    image: "/",
+    image: "",
     description: "comming soon",
     overview: "comming soon",
     innovations: ["comming soon"],
@@ -139,7 +139,7 @@ export const activities: Activity[] = [
   {
     id: "educational-content",
     title: "comming soon",
-    image: "/",
+    image: "",
     description: "comming soon",
     overview: "comming soon",
     innovations: ["comming soon"],
