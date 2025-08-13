@@ -30,7 +30,7 @@ export function SearchBar({
   const [allTags, setAllTags] = useState<string[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // 全タグを収集（動的に生成）
+  // 全タグを収集
   useEffect(() => {
     const mainTags = getAllMainContentTags();
     const activityTags = getAllActivityTags();
@@ -40,26 +40,38 @@ export function SearchBar({
     setAllTags(combinedTags);
   }, []);
 
-  // 検索データを準備（動的に生成）
+  // 検索データを準備
   const searchData: SearchResult[] = [
-    // メインコンテンツ
     ...mainContents.map((content) => ({
       id: content.id,
       title: content.title,
-      category: content.category, // 既に日本語
+      category: content.category,
       tags: content.technologies,
       type: "main" as const,
       page: content.page,
     })),
-    // アクティビティ
     ...activities.map((activity) => ({
       id: activity.id,
       title: activity.title,
-      category: getCategoryLabel(activity.categories), // 日本語に変換
+      category: getCategoryLabel(activity.categories),
       tags: [...activity.tags, ...(activity.technologies || [])],
       type: "activity" as const,
     })),
   ];
+
+  // 外部からタグを追加する関数を常に定義
+  const addTag = (tag: string) => {
+    if (!selectedTags.includes(tag)) {
+      onTagsChange?.([...selectedTags, tag]);
+    }
+    setIsOpen(true); // タグが追加されたら検索バーを開く
+  };
+
+  // コンポーネントがマウントされた時点で関数を公開
+  useEffect(() => {
+    (window as any).addSearchTag = addTag;
+    console.log("addSearchTag関数を登録しました"); // デバッグ用
+  }, [selectedTags, onTagsChange]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -103,18 +115,6 @@ export function SearchBar({
   const clearAll = () => {
     onTagsChange?.([]);
   };
-
-  const addTag = (tag: string) => {
-    if (!selectedTags.includes(tag)) {
-      onTagsChange?.([...selectedTags, tag]);
-    }
-    setIsOpen(true);
-  };
-
-  // 外部からタグを追加する関数を公開
-  useEffect(() => {
-    (window as any).addSearchTag = addTag;
-  }, [selectedTags]);
 
   return (
     <div className="relative" ref={searchRef}>
