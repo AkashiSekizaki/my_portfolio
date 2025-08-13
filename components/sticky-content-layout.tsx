@@ -15,6 +15,7 @@ import {
   ThumbsUp,
   Award,
   Book,
+  Link,
 } from "lucide-react";
 
 interface StickyContentLayoutProps {
@@ -28,12 +29,7 @@ interface StickyContentLayoutProps {
   achievements: string[];
   vision: string;
   challenges: string;
-  links?: {
-    github?: string;
-    demo?: string;
-    paper?: string;
-    presentation?: string;
-  };
+  links?: Record<string, string>;
   children?: React.ReactNode;
   onTagClick?: (tag: string) => void;
 }
@@ -173,50 +169,29 @@ export function StickyContentLayout({
                 </ul>
               </div>
 
-              {links && (
+              {links && Object.keys(links).length > 0 && (
                 <div className="pt-6 border-t">
-                  <h4 className="font-semibold mb-4 text-xl">関連リンク</h4>
+                  <h4 className="font-semibold mb-4 text-xl flex items-center">
+                    <Link className="h-5 w-5 mr-2" />
+                    関連リンク
+                  </h4>
                   <div className="flex flex-wrap gap-4">
-                    {links.github && (
+                    {Object.entries(links).map(([key, url]) => (
                       <Button
+                        key={key}
                         variant="outline"
                         size="sm"
                         className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
+                        onClick={() => window.open(url, "_blank")}
                       >
-                        <Github className="h-4 w-4 mr-2" />
-                        GitHub
+                        {key.toLowerCase() === "github" ? (
+                          <Github className="h-4 w-4 mr-2" />
+                        ) : (
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                        )}
+                        {key}
                       </Button>
-                    )}
-                    {links.demo && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        デモ
-                      </Button>
-                    )}
-                    {links.paper && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-                      >
-                        <FileText className="h-4 w-4 mr-2" />
-                        論文
-                      </Button>
-                    )}
-                    {links.presentation && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
-                      >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        発表資料
-                      </Button>
-                    )}
+                    ))}
                   </div>
                 </div>
               )}

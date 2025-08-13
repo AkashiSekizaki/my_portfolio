@@ -1,17 +1,6 @@
 import { StickyContentLayout } from "@/components/sticky-content-layout";
 import { SlidingRelatedActivities } from "@/components/sliding-related-activities";
 
-// 型定義を追加
-interface ProjectLinks {
-  demo?: string;
-  article1?: string;
-  article2?: string;
-  article3?: string;
-  github?: string;
-  paper?: string;
-  presentation?: string;
-}
-
 const projectData = {
   title: "壁紙販売店向けアプリ",
   description: "開発経験",
@@ -46,13 +35,14 @@ const projectData = {
   challenges:
     "初めての本格的なWebアプリ開発で、データベース設計やセキュリティ対策に苦労。特にリアルタイム同期の実装では何度も設計を見直した",
   links: {
-    demo: "https://drive.google.com/file/d/1kCqkZ2jIhkjj8MFwl6Xyut8J1a7eNujX/view",
-    article1:
+    "発表ポスター":
+      "https://drive.google.com/file/d/1kCqkZ2jIhkjj8MFwl6Xyut8J1a7eNujX/view",
+    "コンテスト結果":
       "https://www.hmcc.jp/2024/02/22/北海道学生アプリコンテスト2024結果発表/",
-    article2: "https://www.fun.ac.jp/en/activity/23044",
-    article3:
+    "大学記事": "https://www.fun.ac.jp/en/activity/23044",
+    "Wantedly記事":
       "https://www.wantedly.com/companies/crosstyhd/post_articles/926524",
-  } as ProjectLinks,
+  } as Record<string, string>,
 };
 
 const relatedActivities = [

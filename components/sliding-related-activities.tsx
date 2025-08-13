@@ -1,85 +1,93 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ActivityModal } from "@/components/activity-modal"
-import { Eye, ChevronLeft, ChevronRight } from "lucide-react"
-import Image from "next/image"
+import { useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ActivityModal } from "@/components/activity-modal";
+import { Eye, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 interface Activity {
-  title: string
-  image: string
-  description: string
-  tags: string[]
-  overview?: string
-  technologies?: string[]
-  innovations?: string[]
-  learnings?: string[]
-  achievements?: string[]
+  title: string;
+  image: string;
+  description: string;
+  overview: string; // string | undefined から string に変更
+  technologies?: string[];
+  innovations?: string[];
+  learnings?: string[];
+  achievements?: string[];
+  tags: string[];
   links?: {
-    github?: string
-    demo?: string
-    paper?: string
-    presentation?: string
-  }
+    github?: string;
+    demo?: string;
+    paper?: string;
+    presentation?: string;
+  };
 }
 
 interface SlidingRelatedActivitiesProps {
-  title: string
-  activities: Activity[]
-  onTagClick?: (tag: string) => void
+  title: string;
+  activities: Activity[];
+  onTagClick?: (tag: string) => void;
 }
 
-export function SlidingRelatedActivities({ title, activities, onTagClick }: SlidingRelatedActivitiesProps) {
-  const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentIndex, setCurrentIndex] = useState(0)
+export function SlidingRelatedActivities({
+  title,
+  activities,
+  onTagClick,
+}: SlidingRelatedActivitiesProps) {
+  const [selectedActivity, setSelectedActivity] = useState<Activity | null>(
+    null
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const displayCount = 3
-  const shouldSlide = activities.length > displayCount
+  const displayCount = 3;
+  const shouldSlide = activities.length > displayCount;
 
   useEffect(() => {
-    if (!shouldSlide) return
+    if (!shouldSlide) return;
 
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % activities.length)
-    }, 5000)
+      setCurrentIndex((prev) => (prev + 1) % activities.length);
+    }, 5000);
 
-    return () => clearInterval(timer)
-  }, [activities.length, shouldSlide])
+    return () => clearInterval(timer);
+  }, [activities.length, shouldSlide]);
 
   const getVisibleActivities = () => {
-    if (!shouldSlide) return activities
+    if (!shouldSlide) return activities;
 
-    const visible = []
+    const visible = [];
     for (let i = 0; i < displayCount; i++) {
-      const index = (currentIndex + i) % activities.length
-      visible.push(activities[index])
+      const index = (currentIndex + i) % activities.length;
+      visible.push(activities[index]);
     }
-    return visible
-  }
+    return visible;
+  };
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % activities.length)
-  }
+    setCurrentIndex((prev) => (prev + 1) % activities.length);
+  };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + activities.length) % activities.length)
-  }
+    setCurrentIndex(
+      (prev) => (prev - 1 + activities.length) % activities.length
+    );
+  };
 
   const handleActivityClick = (activity: Activity) => {
-    setSelectedActivity(activity)
-    setIsModalOpen(true)
-  }
+    setSelectedActivity(activity);
+    setIsModalOpen(true);
+  };
 
   const closeModal = () => {
-    setIsModalOpen(false)
-    setSelectedActivity(null)
-  }
+    setIsModalOpen(false);
+    setSelectedActivity(null);
+  };
 
-  const visibleActivities = getVisibleActivities()
+  const visibleActivities = getVisibleActivities();
 
   return (
     <div className="mt-16">
@@ -136,10 +144,14 @@ export function SlidingRelatedActivities({ title, activities, onTagClick }: Slid
                 </div>
               </div>
               <CardHeader>
-                <CardTitle className="text-lg group-hover:text-primary transition-colors">{activity.title}</CardTitle>
+                <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                  {activity.title}
+                </CardTitle>
               </CardHeader>
               <CardContent className="flex-1 flex flex-col">
-                <p className="text-muted-foreground text-sm mb-4 flex-1">{activity.description}</p>
+                <p className="text-muted-foreground text-sm mb-4 flex-1">
+                  {activity.description}
+                </p>
                 <div className="flex flex-wrap gap-1">
                   {activity.tags.slice(0, 3).map((tag) => (
                     <Badge
@@ -147,8 +159,8 @@ export function SlidingRelatedActivities({ title, activities, onTagClick }: Slid
                       variant="secondary"
                       className="text-xs cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        onTagClick?.(tag)
+                        e.stopPropagation();
+                        onTagClick?.(tag);
                       }}
                     >
                       {tag}
@@ -181,7 +193,11 @@ export function SlidingRelatedActivities({ title, activities, onTagClick }: Slid
         </div>
       )}
 
-      <ActivityModal isOpen={isModalOpen} onClose={closeModal} activity={selectedActivity} />
+      <ActivityModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        activity={selectedActivity}
+      />
     </div>
-  )
+  );
 }
