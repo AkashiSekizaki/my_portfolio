@@ -4,20 +4,12 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Eye } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ActivityModal } from "@/components/activity-modal";
 import Image from "next/image";
-
-interface Activity {
-  id: string;
-  title: string;
-  image: string;
-  description: string;
-  overview: string;
-  technologies?: string[];
-  tags?: string[];
-}
+// 共通の型をインポート
+import type { Activity } from "@/data/activities";
 
 interface RelatedActivitiesProps {
   title: string;
@@ -71,7 +63,7 @@ export function RelatedActivities({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // アクティビティデータが不完全な場合の補完
-  const completeActivities = activities.map((activity) => ({
+  const completeActivities: Activity[] = activities.map((activity) => ({
     ...activity,
     overview: activity.overview || getActivityOverview(activity.title),
     technologies:
@@ -80,6 +72,11 @@ export function RelatedActivities({
       activity.tags ||
       activity.technologies ||
       getDefaultTechnologies(activity.title),
+    // 必須フィールドのデフォルト値を設定
+    innovations: activity.innovations || [],
+    learnings: activity.learnings || [],
+    achievements: activity.achievements || [],
+    categories: activity.categories || ["other"],
   }));
 
   const nextSlide = () => {

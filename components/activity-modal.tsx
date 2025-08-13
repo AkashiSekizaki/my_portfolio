@@ -1,144 +1,141 @@
-"use client"
+"use client";
 
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, FileText } from "lucide-react"
-import Image from "next/image"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
+// 共通の型をインポート
+import type { Activity } from "@/data/activities";
 
 interface ActivityModalProps {
-  isOpen: boolean
-  onClose: () => void
-  activity: {
-    title: string
-    image: string
-    overview: string
-    technologies?: string[]
-    innovations?: string[]
-    learnings?: string[]
-    achievements?: string[]
-    tags: string[]
-    links?: {
-      github?: string
-      demo?: string
-      paper?: string
-      presentation?: string
-    }
-  } | null
+  isOpen: boolean;
+  onClose: () => void;
+  activity: Activity | null;
 }
 
-export function ActivityModal({ isOpen, onClose, activity }: ActivityModalProps) {
-  if (!activity) return null
+export function ActivityModal({
+  isOpen,
+  onClose,
+  activity,
+}: ActivityModalProps) {
+  if (!activity) return null;
+
+  const handleLinkClick = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            {activity.title}
-          </DialogTitle>
+          <DialogTitle className="text-2xl">{activity.title}</DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
-          <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
-            <Image src={activity.image || "/placeholder.svg"} alt={activity.title} fill className="object-cover" />
+          {/* 画像 */}
+          <div className="relative w-full h-64">
+            <Image
+              src={activity.image}
+              alt={activity.title}
+              fill
+              className="object-cover rounded-lg"
+            />
           </div>
 
+          {/* 概要 */}
           <div>
-            <h4 className="font-semibold mb-3 text-lg">概要</h4>
-            <p className="text-muted-foreground leading-relaxed">{activity.overview}</p>
+            <h3 className="text-lg font-semibold mb-2">概要</h3>
+            <p className="text-muted-foreground">{activity.overview}</p>
           </div>
 
+          {/* 技術スタック */}
+          {activity.technologies && activity.technologies.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-2">技術スタック</h3>
+              <div className="flex flex-wrap gap-2">
+                {activity.technologies.map((tech) => (
+                  <Badge key={tech} variant="secondary">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 革新的な取り組み */}
           {activity.innovations && activity.innovations.length > 0 && (
             <div>
-              <h4 className="font-semibold mb-3 text-lg">工夫点</h4>
-              <ul className="text-muted-foreground space-y-2">
-                {activity.innovations.map((innovation, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-primary mr-3 mt-1">▸</span>
-                    <span className="leading-relaxed">{innovation}</span>
+              <h3 className="text-lg font-semibold mb-2">革新的な取り組み</h3>
+              <ul className="list-disc list-inside space-y-1">
+                {activity.innovations.map((innovation, index) => (
+                  <li key={index} className="text-muted-foreground">
+                    {innovation}
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
+          {/* 学んだこと */}
           {activity.learnings && activity.learnings.length > 0 && (
             <div>
-              <h4 className="font-semibold mb-3 text-lg">学び</h4>
-              <ul className="text-muted-foreground space-y-2">
-                {activity.learnings.map((learning, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-primary mr-3 mt-1">▸</span>
-                    <span className="leading-relaxed">{learning}</span>
+              <h3 className="text-lg font-semibold mb-2">学んだこと</h3>
+              <ul className="list-disc list-inside space-y-1">
+                {activity.learnings.map((learning, index) => (
+                  <li key={index} className="text-muted-foreground">
+                    {learning}
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
+          {/* 実績・成果 */}
           {activity.achievements && activity.achievements.length > 0 && (
             <div>
-              <h4 className="font-semibold mb-3 text-lg">実績</h4>
-              <ul className="text-muted-foreground space-y-2">
-                {activity.achievements.map((achievement, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-primary mr-3 mt-1">▸</span>
-                    <span className="leading-relaxed">{achievement}</span>
+              <h3 className="text-lg font-semibold mb-2">実績・成果</h3>
+              <ul className="list-disc list-inside space-y-1">
+                {activity.achievements.map((achievement, index) => (
+                  <li key={index} className="text-muted-foreground">
+                    {achievement}
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          <div>
-            <h4 className="font-semibold mb-3 text-lg">タグ</h4>
-            <div className="flex flex-wrap gap-2">
-              {activity.tags.map((tag) => (
-                <Badge
-                  key={tag}
-                  variant="secondary"
-                  className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                  onClick={() => {
-                    ;(window as any).addSearchTag?.(tag)
-                  }}
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {activity.links && (
-            <div className="flex flex-wrap gap-3 pt-4">
-              {activity.links.github && (
-                <Button variant="outline" size="sm">
-                  <Github className="h-4 w-4 mr-2" />
-                  GitHub
-                </Button>
-              )}
-              {activity.links.demo && (
-                <Button variant="outline" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  デモ
-                </Button>
-              )}
-              {activity.links.paper && (
-                <Button variant="outline" size="sm">
-                  <FileText className="h-4 w-4 mr-2" />
-                  論文
-                </Button>
-              )}
-              {activity.links.presentation && (
-                <Button variant="outline" size="sm">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  発表資料
-                </Button>
-              )}
+          {/* リンク */}
+          {activity.links && Object.keys(activity.links).length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-2">関連リンク</h3>
+              <div className="flex flex-wrap gap-2">
+                {Object.entries(activity.links).map(([key, url]) => (
+                  <Button
+                    key={key}
+                    variant="outline"
+                    size="sm"
+                    onClick={() => handleLinkClick(url)}
+                    className="flex items-center gap-2"
+                  >
+                    {key === "github" ? (
+                      <Github className="h-4 w-4" />
+                    ) : (
+                      <ExternalLink className="h-4 w-4" />
+                    )}
+                    {key}
+                  </Button>
+                ))}
+              </div>
             </div>
           )}
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
