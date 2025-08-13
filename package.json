@@ -1,12 +1,13 @@
 {
-  "name": "my-v0-project",
+  "name": "my_portfolio_clean",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
     "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
-    "start": "next start"
+    "build:github": "NEXT_PUBLIC_BASE_PATH=/my_protfolio next build"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
