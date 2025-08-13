@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 const photos = [
   {
-    src: "diving.jpg",
+    src: "/diving.JPG",
     caption: "ダイビングを楽しむ様子",
   },
   {
