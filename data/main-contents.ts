@@ -111,6 +111,10 @@ export const mainContents: MainContent[] = [
     vision: "実際に会社で使われるアプリをチームで作り，DXを実現する！",
     challenges:
       "異なるバックグラウンドを持つメンバーと共に，同じゴールを目指すためのチャレンジ（ペーパータワー，勉強会，おもしろサイトコンテスト，食事会など）",
+    links: {
+      "ポスター":
+        "https://drive.google.com/file/d/1sv361WstSzOHlzqQpSnl_P2bn1CKxOO0/view",
+    },
   },
 
   // 研究
@@ -155,6 +159,10 @@ export const mainContents: MainContent[] = [
     vision: "情報技術を活用して，少しでも漁業者さんの力になる！",
     challenges:
       "商業として行なっている漁にお邪魔しているため，最大限ご迷惑をおかけしないようにデータを集める必要があること",
+    links: {
+      "大学パンフレット":
+        "https://www.d-pam.com/fun/2515040/index.html#target/page_no=27",
+    },
   },
 
   // 学習支援
@@ -200,6 +208,11 @@ export const mainContents: MainContent[] = [
     ],
     vision: "公立はこだて未来大学の学生が自律的な学習者となる",
     challenges: "個々の学習者の特性や相談内容を理解し，適切な支援を行うこと",
+    links: {
+      "メタ学習ラボHP": "https://meta-lab.jp/intro/index.html",
+      "共同研究論文":
+        "https://www.jstage.jst.go.jp/article/jsetstudy/2024/4/2024_JSET2024-4-C2/_pdf/-char/ja",
+    },
   },
 ];
 
