@@ -120,7 +120,7 @@ export const mainContents: MainContent[] = [
   // 研究
   {
     id: "research-project",
-    title: "桁引き網漁のナマコ分布の可視化",
+    title: "ナマコ漁における分布の可視化",
     description: "研究",
     category: "研究",
     page: "research",
