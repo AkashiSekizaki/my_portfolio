@@ -24,9 +24,9 @@ export const mainContents: MainContent[] = [
     category: "開発経験",
     page: "development",
     images: [
-      { src: "/kabereco-start.png", caption: "スタート画面" },
-      { src: "/kabereco-select.png", caption: "壁紙選択画面" },
-      { src: "/kabereco-detail.png", caption: "壁紙の詳細" },
+      { src: "kabereco-start.png", caption: "スタート画面" },
+      { src: "kabereco-select.png", caption: "壁紙選択画面" },
+      { src: "kabereco-detail.png", caption: "壁紙の詳細" },
       { src: "kabereco-result.png", caption: "診断結果" },
     ],
     overview:
@@ -81,9 +81,9 @@ export const mainContents: MainContent[] = [
     category: "リーダーシップ",
     page: "leadership",
     images: [
-      { src: "/fun-i-con-写真.jpg", caption: "成果発表会で特別賞" },
-      { src: "/fun-i-con-work2.jpg", caption: "ペーパータワー" },
-      { src: "/fun-i-con-drink.jpg", caption: "食事会" },
+      { src: "fun-i-con-写真.jpg", caption: "成果発表会で特別賞" },
+      { src: "fun-i-con-work2.jpg", caption: "ペーパータワー" },
+      { src: "fun-i-con-drink.jpg", caption: "食事会" },
     ],
     overview:
       "「開発経験」で記載している壁紙販売店向けアプリを開発したチームのリーダーを引き継いだ．新規の15名チーム・新規テーマで開発に取り組んでいる．協力企業のクロスティホールディングス株式会社と連携し，業務で使用している「日報に新しい価値を与えるアプリケーションの開発」に取り組んでいる．",
@@ -125,10 +125,10 @@ export const mainContents: MainContent[] = [
     category: "研究",
     page: "research",
     images: [
-      { src: "/ナマコ検出.png", caption: "ナマコ検出の様子" },
-      { src: "/ナマコ漁船.jpg", caption: "ナマコ漁船の様子" },
+      { src: "ナマコ検出.png", caption: "ナマコ検出の様子" },
+      { src: "ナマコ漁船.jpg", caption: "ナマコ漁船の様子" },
       {
-        src: "/留萌.jpg",
+        src: "留萌.jpg",
         caption: "漁業者さんのもとで泊まり込みの研究データ収集",
       },
     ],

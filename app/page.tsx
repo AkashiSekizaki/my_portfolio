@@ -111,7 +111,7 @@ export default function Home() {
               className="relative w-100 h-100 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
             >
               <CustomImage
-                src="/my_icon.png"
+                src="my_icon.png"
                 alt="アイコン"
                 fill
                 className="object-cover"
