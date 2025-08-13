@@ -4,9 +4,8 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Akashi Sekizaki",
+  title: "Akashi Portfolio",
   description: "関﨑 証のポートフォリオサイト",
-  generator: "v0.app",
   icons: {
     icon: "/my_icon.png",
   },
