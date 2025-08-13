@@ -123,7 +123,7 @@ const eventHistory = [
     year: "2025年4月",
     title: "活動の中心的役割を経験",
     description:
-      "学内の学習支援組織（メタ学習ラボ）の学生リーダー、課外活動のチームのリーダー。\n共同研究の立ち上げ、学内イベントの企画などを経験。",
+      "学内の学習支援組織（メタ学習ラボ）の学生リーダー、課外活動のチームのリーダー、\n共同研究の立ち上げ、学内イベントの企画などを経験。",
   },
   {
     year: "2025年8月",
@@ -204,9 +204,7 @@ export function HeroPage() {
           {/* Profile Information */}
           <div className="space-y-8">
             <div>
-              <h1 className="text-4xl font-bold mb-2">
-                関﨑 証（せきざき あかし）
-              </h1>
+              <h1 className="text-4xl font-bold mb-2">関﨑 証</h1>
               <p className="text-xl text-muted-foreground mb-6">
                 公立はこだて未来大学大学院 1年
               </p>
