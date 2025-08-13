@@ -32,7 +32,7 @@ export default function Home() {
     setTimeout(() => {
       setCurrentPage(newPage);
       setIsTransitioning(false);
-    }, 200);
+    }, 300);
   };
 
   const renderPage = () => {
@@ -63,18 +63,18 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background/95 backdrop-blur-sm"
+            transition={{ duration: 1 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-background"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.4 }}
-              className="relative w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
+              className="relative w-100 h-100 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
             >
               <Image
-                src="/professional-headshot.png"
-                alt="笑顔の写真"
+                src="/my_icon.png"
+                alt="アイコン"
                 fill
                 className="object-cover"
               />
