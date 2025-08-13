@@ -12,6 +12,7 @@ import { ActivityModal } from "@/components/activity-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { activities } from "@/data/activities";
+// 同じ型定義をインポート
 import type { SearchResult } from "@/types/search";
 import type { Activity } from "@/data/activities";
 
@@ -48,11 +49,9 @@ export default function Home() {
     console.log("検索結果クリック:", result);
 
     if (result.type === "main" && result.page) {
-      // メインコンテンツの場合、対応するページに遷移
       console.log("ページ遷移:", result.page);
       handlePageChange(result.page);
     } else if (result.type === "activity") {
-      // アクティビティの場合、該当のモーダルを開く
       const activity = activities.find((a) => a.id === result.id);
       if (activity) {
         console.log("アクティビティモーダル開く:", activity);
