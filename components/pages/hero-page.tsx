@@ -6,17 +6,25 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ca } from "date-fns/locale";
 
 const photos = [
   {
-    src: "/professional-headshot.png",
-    caption: "プロフェッショナルな環境での一枚",
+    src: "diving.jpg",
+    caption: "ダイビングを楽しむ様子",
   },
   {
-    src: "/coding-workspace.png",
-    caption: "集中してコーディングに取り組む様子",
+    src: "/fase_600*730.JPG",
+    caption: "証明写真",
   },
-  { src: "/team-collaboration.png", caption: "チームメンバーとの協力作業" },
+  {
+    src: "/留萌.jpg",
+    caption: "漁業者の方のもとで泊まり込みで研究データ収集",
+  },
+  {
+    src: "/KABEYA訪問_顔のみ.JPG",
+    caption: "課外活動の開発で現場に訪問したときの写真",
+  },
 ];
 
 const profileData = [
