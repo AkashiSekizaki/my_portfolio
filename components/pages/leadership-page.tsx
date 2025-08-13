@@ -3,10 +3,7 @@ import { SlidingRelatedActivities } from "@/components/sliding-related-activitie
 import { getMainContentById } from "@/data/main-contents";
 import { getActivitiesByCategory } from "@/data/activities";
 
-// リーダーシップのメインコンテンツを取得
 const projectData = getMainContentById("leadership-experience")!;
-
-// リーダーシップカテゴリの関連活動を取得
 const relatedActivities = getActivitiesByCategory("leadership");
 
 const handleTagClick = (tag: string) => {

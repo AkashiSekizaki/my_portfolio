@@ -12,7 +12,6 @@ import { ActivityModal } from "@/components/activity-modal";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { activities } from "@/data/activities";
-import { mainContents } from "@/data/main-contents";
 import type { SearchResult } from "@/types/search";
 import type { Activity } from "@/data/activities";
 

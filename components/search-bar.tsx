@@ -30,7 +30,7 @@ export function SearchBar({
   const [allTags, setAllTags] = useState<string[]>([]);
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // 全タグを収集
+  // 全タグを収集（動的に生成）
   useEffect(() => {
     const mainTags = getAllMainContentTags();
     const activityTags = getAllActivityTags();
@@ -40,7 +40,7 @@ export function SearchBar({
     setAllTags(combinedTags);
   }, []);
 
-  // 検索データを準備
+  // 検索データを準備（動的に生成）
   const searchData: SearchResult[] = [
     // メインコンテンツ
     ...mainContents.map((content) => ({
