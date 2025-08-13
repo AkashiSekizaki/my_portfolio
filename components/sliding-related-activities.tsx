@@ -4,16 +4,11 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ActivityModal } from "@/components/activity-modal";
-<<<<<<< HEAD
-import { Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import CustomImage from "@/components/ui/custom-image";
 // 共通の型をインポート
-=======
-import CustomImage from "@/components/ui/custom-image";
->>>>>>> d8aa8743474ee9b30450bf5be0ba226a2b02cbe8
 import type { Activity } from "@/data/activities";
 
 interface SlidingRelatedActivitiesProps {
@@ -66,6 +61,8 @@ export function SlidingRelatedActivities({
     );
   }
 
+  const visibleActivities = activities.slice(currentIndex, currentIndex + 3);
+
   return (
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -94,52 +91,6 @@ export function SlidingRelatedActivities({
             </>
           )}
 
-<<<<<<< HEAD
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-12">
-          {visibleActivities.map((activity, index) => (
-            <Card
-              key={`${activity.id}-${index}`}
-              className="h-full group hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2"
-            >
-              <div className="relative aspect-video overflow-hidden">
-                <CustomImage
-                  src={activity.image || "/placeholder.svg"}
-                  alt={activity.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    onClick={() => handleActivityClick(activity)}
-                  >
-                    <Eye className="h-4 w-4 mr-2" />
-                    詳細を見る
-                  </Button>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                  {activity.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <p className="text-muted-foreground text-sm mb-4 flex-1">
-                  {activity.description}
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {activity.technologies?.slice(0, 3).map((tag) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="text-xs cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onTagClick?.(tag);
-                      }}
-=======
           {/* カードコンテナ */}
           <div className="overflow-hidden mx-8">
             <AnimatePresence mode="wait">
@@ -151,68 +102,53 @@ export function SlidingRelatedActivities({
                 transition={{ duration: 0.3 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                {activities
-                  .slice(currentIndex, currentIndex + 3)
-                  .map((activity) => (
-                    <Card
-                      key={activity.id}
-                      className="cursor-pointer hover:shadow-lg transition-shadow"
-                      onClick={() => openModal(activity)}
->>>>>>> d8aa8743474ee9b30450bf5be0ba226a2b02cbe8
-                    >
-                      <CardHeader>
-                        <div className="relative w-full h-48 mb-4">
-                          <CustomImage
-                            src={activity.image}
-                            alt={activity.title}
-                            fill
-                            className="object-cover rounded-lg"
-                          />
-                        </div>
-                        <CardTitle className="text-lg">
-                          {activity.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground mb-4">
-                          {activity.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {activity.technologies?.slice(0, 3).map((tech) => (
-                            <Badge
-                              key={tech}
-                              variant="secondary"
-                              className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                onTagClick?.(tech);
-                              }}
-                            >
-                              {tech}
+                {visibleActivities.map((activity) => (
+                  <Card
+                    key={activity.id}
+                    className="cursor-pointer hover:shadow-lg transition-shadow"
+                    onClick={() => openModal(activity)}
+                  >
+                    <CardHeader>
+                      <div className="relative w-full h-48 mb-4">
+                        <CustomImage
+                          src={activity.image}
+                          alt={activity.title}
+                          fill
+                          className="object-cover rounded-lg"
+                        />
+                      </div>
+                      <CardTitle className="text-lg">
+                        {activity.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {activity.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {activity.technologies?.slice(0, 3).map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onTagClick?.(tech);
+                            }}
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                        {activity.technologies &&
+                          activity.technologies.length > 3 && (
+                            <Badge variant="outline">
+                              +{activity.technologies.length - 3}
                             </Badge>
-                          ))}
-                          {activity.technologies &&
-                            activity.technologies.length > 3 && (
-                              <Badge variant="outline">
-                                +{activity.technologies.length - 3}
-                              </Badge>
-                            )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-<<<<<<< HEAD
-                  {activity.technologies &&
-                    activity.technologies.length > 3 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{activity.technologies.length - 3}
-                      </Badge>
-                    )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-=======
+                          )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -235,7 +171,6 @@ export function SlidingRelatedActivities({
               )}
             </div>
           )}
->>>>>>> d8aa8743474ee9b30450bf5be0ba226a2b02cbe8
         </div>
       </div>
 
