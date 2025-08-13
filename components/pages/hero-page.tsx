@@ -10,19 +10,19 @@ import { Button } from "@/components/ui/button";
 
 const photos = [
   {
-    src: "/diving.JPG",
+    src: "diving.JPG",
     caption: "ダイビングを楽しむ様子",
   },
   {
-    src: "/fase_600*730.JPG",
+    src: "fase_600*730.JPG",
     caption: "証明写真",
   },
   {
-    src: "/留萌.jpg",
+    src: "留萌.jpg",
     caption: "漁業者の方のもとで泊まり込みで研究データ収集",
   },
   {
-    src: "/KABEYA訪問_顔のみ.JPG",
+    src: "KABEYA訪問_顔のみ.JPG",
     caption: "課外活動の開発で現場に訪問したときの写真",
   },
 ];
@@ -162,7 +162,7 @@ export function HeroPage() {
           <div className="relative">
             <div className="relative aspect-square max-w-md mx-auto overflow-hidden rounded-2xl shadow-2xl">
               <CustomImage
-                src={photos[currentPhoto].src || "/placeholder.svg"}
+                src={photos[currentPhoto].src || "placeholder.svg"}
                 alt="プロフィール写真"
                 fill
                 className="object-cover transition-opacity duration-500"
@@ -209,7 +209,7 @@ export function HeroPage() {
             <div>
               <div className="flex items-center mb-4">
                 <CustomImage
-                  src="/my_icon.png"
+                  src="my_icon.png"
                   alt="アイコン"
                   width={60}
                   height={60}
