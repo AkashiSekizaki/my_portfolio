@@ -1,30 +1,41 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { Slideshow } from "@/components/slideshow"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, FileText, Heart, AlertTriangle } from "lucide-react"
+import type React from "react";
+import { Slideshow } from "@/components/slideshow";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  ExternalLink,
+  Github,
+  FileText,
+  Flag,
+  X,
+  Tag,
+  PenLine,
+  ThumbsUp,
+  Award,
+  Book,
+} from "lucide-react";
 
 interface StickyContentLayoutProps {
-  title: string
-  description: string
-  images: { src: string; caption: string }[]
-  overview: string
-  technologies: string[]
-  innovations: string[]
-  learnings: string[]
-  achievements: string[]
-  vision: string
-  challenges: string
+  title: string;
+  description: string;
+  images: { src: string; caption: string }[];
+  overview: string;
+  technologies: string[];
+  innovations: string[];
+  learnings: string[];
+  achievements: string[];
+  vision: string;
+  challenges: string;
   links?: {
-    github?: string
-    demo?: string
-    paper?: string
-    presentation?: string
-  }
-  children?: React.ReactNode
-  onTagClick?: (tag: string) => void
+    github?: string;
+    demo?: string;
+    paper?: string;
+    presentation?: string;
+  };
+  children?: React.ReactNode;
+  onTagClick?: (tag: string) => void;
 }
 
 export function StickyContentLayout({
@@ -50,7 +61,7 @@ export function StickyContentLayout({
             {description}
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            実際のプロジェクトを通じて培った技術力と問題解決能力
+            実際の取り組みについてご紹介します。
           </p>
         </div>
 
@@ -67,30 +78,42 @@ export function StickyContentLayout({
                 <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
                   {title}
                 </h2>
-                <h4 className="font-semibold mb-4 text-2xl">概要</h4>
-                <p className="text-muted-foreground leading-relaxed text-lg">{overview}</p>
+                <h4 className="font-semibold mb-4 text-xl flex items-center">
+                  <Book className="h-5 w-5 mr-2" />
+                  概要
+                </h4>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  {overview}
+                </p>
               </div>
 
               <div className="grid gap-8">
                 <div>
                   <h4 className="font-semibold mb-4 text-xl flex items-center">
-                    <Heart className="h-5 w-5 mr-2 text-red-500" />
-                    ビジョン
+                    <Flag className="h-5 w-5 mr-2" />
+                    ゴール
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">{vision}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {vision}
+                  </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold mb-4 text-xl flex items-center">
-                    <AlertTriangle className="h-5 w-5 mr-2 text-orange-500" />
+                    <X className="h-5 w-5 mr-2" />
                     苦労したこと
                   </h4>
-                  <p className="text-muted-foreground leading-relaxed">{challenges}</p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {challenges}
+                  </p>
                 </div>
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4 text-xl">タグ</h4>
+                <h4 className="font-semibold mb-4 text-xl flex items-center">
+                  <Tag className="h-5 w-5 mr-2" />
+                  タグ
+                </h4>
                 <div className="flex flex-wrap gap-3">
                   {technologies.map((tech) => (
                     <Badge
@@ -106,7 +129,10 @@ export function StickyContentLayout({
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4 text-xl">開発上の工夫・取り組み</h4>
+                <h4 className="font-semibold mb-4 text-xl flex items-center">
+                  <ThumbsUp className="h-5 w-5 mr-2" />
+                  開発上の工夫・取り組み
+                </h4>
                 <ul className="text-muted-foreground space-y-3">
                   {innovations.map((innovation, i) => (
                     <li key={i} className="flex items-start">
@@ -118,7 +144,10 @@ export function StickyContentLayout({
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4 text-xl">学び</h4>
+                <h4 className="font-semibold mb-4 text-xl flex items-center">
+                  <PenLine className="h-5 w-5 mr-2" />
+                  学び
+                </h4>
                 <ul className="text-muted-foreground space-y-3">
                   {learnings.map((learning, i) => (
                     <li key={i} className="flex items-start">
@@ -130,7 +159,10 @@ export function StickyContentLayout({
               </div>
 
               <div>
-                <h4 className="font-semibold mb-4 text-xl">実績</h4>
+                <h4 className="font-semibold mb-4 text-xl flex items-center">
+                  <Award className="h-5 w-5 mr-2" />
+                  実績
+                </h4>
                 <ul className="text-muted-foreground space-y-3">
                   {achievements.map((achievement, i) => (
                     <li key={i} className="flex items-start">
@@ -196,5 +228,5 @@ export function StickyContentLayout({
         </div>
       </div>
     </div>
-  )
+  );
 }
