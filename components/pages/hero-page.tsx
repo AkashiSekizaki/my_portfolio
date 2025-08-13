@@ -60,7 +60,8 @@ const educationHistory = [
   },
   {
     year: "2027年3月",
-    title: "上記卒業予定",
+    title:
+      "公立はこだて未来大学大学院 システム情報科学研究科システム情報科学専攻高度ICT領域 卒業（予定）",
     type: "education",
   },
 ];
@@ -288,7 +289,7 @@ export function HeroPage() {
         {/* イベント履歴セクション */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            経歴・イベント
+            自分史
           </h2>
           <div className="max-w-4xl mx-auto">
             <div className="relative">
