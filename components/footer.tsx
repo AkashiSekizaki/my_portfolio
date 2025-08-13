@@ -1,0 +1,72 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Mail, Github, Linkedin, Twitter } from "lucide-react"
+
+export function Footer() {
+  return (
+    <footer className="bg-gradient-to-r from-background via-muted/20 to-background border-t py-16">
+      <div className="container mx-auto px-4">
+        <div className="text-center space-y-8">
+          <div className="space-y-4">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              お気軽にご連絡ください
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              新卒エンジニアとして、チャレンジングな環境で成長していきたいと考えています。
+              ご質問やお話の機会がございましたら、お気軽にお声がけください。
+            </p>
+          </div>
+
+          <div className="flex justify-center flex-wrap gap-4">
+            <Button
+              variant="outline"
+              size="sm"
+              className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
+              onClick={() => window.open("https://mail.google.com/mail/?view=cm&fs=1&to=tanaka@example.com", "_blank")}
+            >
+              <Mail className="h-4 w-4 mr-2" />
+              tanaka@example.com
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
+              onClick={() => window.open("https://github.com/tanaka-taro", "_blank")}
+            >
+              <Github className="h-4 w-4 mr-2" />
+              GitHub
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
+              onClick={() => window.open("https://linkedin.com/in/tanaka-taro", "_blank")}
+            >
+              <Linkedin className="h-4 w-4 mr-2" />
+              LinkedIn
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
+              onClick={() =>
+                window.open(
+                  "https://twitter.com/intent/tweet?text=田中太郎のポートフォリオをチェック！&url=https://portfolio.tanaka-taro.com",
+                  "_blank",
+                )
+              }
+            >
+              <Twitter className="h-4 w-4 mr-2" />
+              Xでシェア
+            </Button>
+          </div>
+
+          <div className="pt-8 border-t border-muted-foreground/20 text-sm text-muted-foreground">
+            <p>&copy; 2024 田中太郎. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}

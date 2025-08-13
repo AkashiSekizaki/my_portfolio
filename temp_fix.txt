@@ -1,0 +1,14 @@
+  }
+
+  // グローバル関数として公開
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      ;(window as any).addSearchTag = (tag: string) => {
+        if (!searchTags.includes(tag)) {
+          setSearchTags([...searchTags, tag])
+        }
+      }
+    }
+  }, [searchTags])
+
+  return (
