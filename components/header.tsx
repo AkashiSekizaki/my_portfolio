@@ -34,7 +34,7 @@ export function Header({
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
-            <h1 className="text-xl font-bold">Portfolio</h1>
+            <h1 className="text-xl font-bold">Akashi Sekizaki</h1>
             <nav className="hidden md:flex space-x-6">
               {navItems.map((item) => (
                 <Button
