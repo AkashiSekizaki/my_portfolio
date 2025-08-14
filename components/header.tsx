@@ -22,7 +22,7 @@ export function Header({
   onSearchResult,
 }: HeaderProps) {
   const navItems = [
-    { id: "hero", label: "ホーム" },
+    { id: "hero", label: "自己紹介" },
     { id: "development", label: "開発経験" },
     { id: "leadership", label: "リーダーシップ" },
     { id: "research", label: "研究" },
