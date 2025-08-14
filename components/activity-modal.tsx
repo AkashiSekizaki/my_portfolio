@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { X, ExternalLink, Target, BookOpen, Trophy, Hash } from "lucide-react";
+import { ExternalLink, Target, BookOpen, Trophy, Hash } from "lucide-react";
 import CustomImage from "@/components/ui/custom-image";
 import type { Activity } from "@/data/activities";
 
@@ -31,19 +31,9 @@ export function ActivityModal({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <div className="flex items-center justify-between">
-            <DialogTitle className="text-2xl font-bold pr-8">
-              {activity.title}
-            </DialogTitle>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onClose}
-              className="h-6 w-6 rounded-full"
-            >
-              <X className="h-4 w-4" />
-            </Button>
-          </div>
+          <DialogTitle className="text-2xl font-bold">
+            {activity.title}
+          </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">

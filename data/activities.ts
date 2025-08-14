@@ -30,7 +30,7 @@ export const activities: Activity[] = [
   {
     id: "portfolio-site",
     title: "ポートフォリオサイト作成",
-    image: "/ポートフォリオ.png",
+    image: "ポートフォリオ.png",
     description: "自身の活動を伝えるアプリケーション",
     category: "development",
     tags: ["AI", "CD自動化", "個人開発", "React", "TypeScript"],
