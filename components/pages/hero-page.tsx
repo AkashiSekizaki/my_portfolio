@@ -34,6 +34,14 @@ const profileData = [
   { label: "喜び", value: "人に喜んでもらうとき、成果が出たとき" },
 ];
 
+// 価値観データ
+const values = [
+  "水泳時代よりも辛いことはない！",
+  "人との繋がりは財産！",
+  "挑戦・楽しむ・継続が大事！",
+  "貢献できること、喜んでもらうことがモチベーション！",
+];
+
 // 学歴データ
 const educationHistory = [
   {
@@ -258,6 +266,36 @@ export function HeroPage() {
                 <Badge variant="secondary">未来大学賞 複数受賞</Badge>
                 <Badge variant="secondary">学内ハッカソン 複数受賞</Badge>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* 価値観セクション */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            価値観
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              {values.map((value, index) => (
+                <Card
+                  key={index}
+                  className="border-2 border-primary/20 hover:border-primary/40 transition-colors"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary-foreground font-bold text-sm">
+                          {index + 1}
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">{value}</h3>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
