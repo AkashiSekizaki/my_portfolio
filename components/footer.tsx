@@ -50,7 +50,7 @@ export function Footer() {
               className="hover:bg-primary hover:text-primary-foreground transition-colors bg-transparent"
               onClick={() =>
                 window.open(
-                  "https://twitter.com/intent/tweet?text=関﨑証のポートフォリオをチェック！&url=https://www.fun.ac.jp/",
+                  "https://twitter.com/intent/tweet?text=関﨑証のポートフォリオをチェック！&url=https://akashisekizaki.github.io/my_portfolio/",
                   "_blank"
                 )
               }
