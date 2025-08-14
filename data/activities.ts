@@ -60,7 +60,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "tyouseisan",
+    id: "et-robo",
     title: "ETロボコンの画像処理",
     image: "noimage.png",
     description: "comming soon",
@@ -71,7 +71,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "tyouseisan",
+    id: "ai-mail-anonymization",
     title: "AIによるメール添削で匿名化",
     image: "noimage.png",
     description: "comming soon",
@@ -82,7 +82,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "tyouseisan",
+    id: "farst-hackathon-bus",
     title: "パス経路可視化ツール：初ハッカソン",
     image: "noimage.png",
     description: "comming soon",
@@ -93,7 +93,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "tyouseisan",
+    id: "ship-position-data-tool",
     title: "研究で使用する漁船の位置情報データ自動取得ツール",
     image: "noimage.png",
     description: "comming soon",
@@ -104,7 +104,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "fishing-app",
+    id: "biwa-lake-app",
     title: "琵琶湖漁業者向けアプリ開発",
     image: "琵琶湖アプリ.png",
     description: "地域課題解決を目指したアプリ開発",
@@ -121,7 +121,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "tyouseisan",
+    id: "digital-archive-system",
     title: "デジタルアーカイブシステム開発バイト",
     image: "noimage.png",
     description: "comming soon",
@@ -134,7 +134,7 @@ export const activities: Activity[] = [
 
   // リーダーシップの関連活動
   {
-    id: "team-management",
+    id: "osc",
     title: "おもしろサイトコンテスト開催",
     image: "noimage.png",
     description: "comming soon",
@@ -145,7 +145,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "event-planning",
+    id: "dayly-report-system",
     title: "日報に新しい価値を与えるシステムの提案を牽引",
     image: "noimage.png",
     description: "comming soon",
@@ -156,7 +156,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "event-planning",
+    id: "mll-leader",
     title: "メタ学習ラボ チューター長",
     image: "noimage.png",
     description: "comming soon",
@@ -167,7 +167,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "event-planning",
+    id: "oc",
     title: "オープンキャンパスへの出展を発案",
     image: "noimage.png",
     description: "comming soon",
@@ -178,7 +178,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "event-planning",
+    id: "hacks-leader",
     title: "1年生2名とハッカソンに挑戦！",
     image: "noimage.png",
     description: "comming soon",
@@ -189,7 +189,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "event-planning",
+    id: "cross-team-education-event",
     title: "【頓挫】 開発の課外活動のチームを跨いだ教育イベントの企画",
     image: "noimage.png",
     description: "comming soon",
@@ -202,7 +202,7 @@ export const activities: Activity[] = [
 
   // 研究の関連活動
   {
-    id: "ml-research",
+    id: "corona-tutoring-study",
     title:
       "コロナ前後のチュータリングにおけるチューター・チューティを対象とした印象の検討",
     image: "noimage.png",
@@ -218,7 +218,7 @@ export const activities: Activity[] = [
     },
   },
   {
-    id: "ml-research",
+    id: "tutoring-before-after-study",
     title: "【取り組み中】 チューターになる前後における意識の変化",
     image: "noimage.png",
     description: "comming soon",
@@ -231,7 +231,7 @@ export const activities: Activity[] = [
 
   // 学習支援の関連活動
   {
-    id: "tutoring-system",
+    id: "hacks-mentor",
     title: "P2hacks2024 メンター",
     image: "noimage.png",
     description: "comming soon",
@@ -242,7 +242,7 @@ export const activities: Activity[] = [
     achievements: ["comming soon"],
   },
   {
-    id: "educational-content",
+    id: "education-event-my-team",
     title: "開発チーム内技術教育",
     image: "noimage.png",
     description: "comming soon",
