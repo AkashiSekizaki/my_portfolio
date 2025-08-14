@@ -1,28 +1,35 @@
 import { StickyContentLayout } from "@/components/sticky-content-layout";
-import { SlidingRelatedActivities } from "@/components/sliding-related-activities";
-import { getMainContentById } from "@/data/main-contents";
+import { mainContents } from "@/data/main-contents";
 import { getActivitiesByCategory } from "@/data/activities";
 
-// 開発経験のメインコンテンツを取得
-const projectData = getMainContentById("wallpaper-app")!;
+interface DevelopmentPageProps {
+  onTagClick?: (tag: string) => void;
+}
 
-// 開発カテゴリの関連活動を取得
-const relatedActivities = getActivitiesByCategory("development");
+export function DevelopmentPage({ onTagClick }: DevelopmentPageProps) {
+  const wallpaperAppContent = mainContents.find(
+    (content) => content.id === "wallpaper-app"
+  );
 
-const handleTagClick = (tag: string) => {
-  if (typeof window !== "undefined" && (window as any).addSearchTag) {
-    (window as any).addSearchTag(tag);
+  const relatedActivities = getActivitiesByCategory("development");
+
+  // コンテンツが見つからない場合のフォールバック
+  if (!wallpaperAppContent) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background to-muted/20 flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold mb-4">開発経験</h2>
+          <p className="text-muted-foreground">コンテンツを準備中です。</p>
+        </div>
+      </div>
+    );
   }
-};
 
-export function DevelopmentPage() {
   return (
-    <StickyContentLayout {...projectData} onTagClick={handleTagClick}>
-      <SlidingRelatedActivities
-        title="関連する活動"
-        activities={relatedActivities}
-        onTagClick={handleTagClick}
-      />
-    </StickyContentLayout>
+    <StickyContentLayout
+      mainContent={wallpaperAppContent}
+      relatedActivities={relatedActivities}
+      onTagClick={onTagClick}
+    />
   );
 }

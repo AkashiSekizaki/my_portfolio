@@ -10,10 +10,8 @@ import { LearningPage } from "@/components/pages/learning-page";
 import { Footer } from "@/components/footer";
 import { ActivityModal } from "@/components/activity-modal";
 import { motion, AnimatePresence } from "framer-motion";
-// Image を CustomImage に変更
 import CustomImage from "@/components/ui/custom-image";
 import { activities } from "@/data/activities";
-// 同じ型定義をインポート
 import type { SearchResult } from "@/types/search";
 import type { Activity } from "@/data/activities";
 
@@ -47,24 +45,29 @@ export default function Home() {
   };
 
   const handleSearchResult = (result: SearchResult) => {
-    console.log("検索結果クリック:", result);
-
     if (result.type === "main" && result.page) {
-      console.log("ページ遷移:", result.page);
       handlePageChange(result.page);
     } else if (result.type === "activity") {
       const activity = activities.find((a) => a.id === result.id);
       if (activity) {
-        console.log("アクティビティモーダル開く:", activity);
         setSelectedActivity(activity);
         setIsModalOpen(true);
       }
     }
   };
 
+  // モーダルを閉じる関数
   const closeModal = () => {
     setIsModalOpen(false);
     setSelectedActivity(null);
+  };
+
+  // タグクリック処理を統一
+  const handleTagClick = (tag: string) => {
+    if (!selectedTags.includes(tag)) {
+      setSelectedTags([...selectedTags, tag]);
+    }
+    closeModal(); // モーダルが開いている場合は閉じる
   };
 
   const renderPage = () => {
@@ -72,13 +75,13 @@ export default function Home() {
       case "hero":
         return <HeroPage />;
       case "development":
-        return <DevelopmentPage />;
+        return <DevelopmentPage onTagClick={handleTagClick} />;
       case "leadership":
-        return <LeadershipPage />;
+        return <LeadershipPage onTagClick={handleTagClick} />;
       case "research":
-        return <ResearchPage />;
+        return <ResearchPage onTagClick={handleTagClick} />;
       case "learning":
-        return <LearningPage />;
+        return <LearningPage onTagClick={handleTagClick} />;
       default:
         return <HeroPage />;
     }
@@ -111,7 +114,7 @@ export default function Home() {
               className="relative w-100 h-100 rounded-full overflow-hidden shadow-2xl border-4 border-primary/20"
             >
               <CustomImage
-                src="my_icon.png"
+                src="/my_icon.png"
                 alt="アイコン"
                 fill
                 className="object-cover"
@@ -136,11 +139,12 @@ export default function Home() {
         </AnimatePresence>
       </main>
 
-      {/* 検索結果のアクティビティモーダル */}
+      {/* 検索結果とタグクリックのアクティビティモーダル */}
       <ActivityModal
         isOpen={isModalOpen}
         onClose={closeModal}
         activity={selectedActivity}
+        onTagClick={handleTagClick}
       />
 
       <Footer />

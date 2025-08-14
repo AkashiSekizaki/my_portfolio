@@ -40,6 +40,13 @@ export function SearchBar({
     setAllTags(combinedTags);
   }, []);
 
+  // selectedTagsが変更されたら検索バーを自動で開く
+  useEffect(() => {
+    if (selectedTags.length > 0) {
+      setIsOpen(true);
+    }
+  }, [selectedTags]);
+
   // 検索データを準備
   const searchData: SearchResult[] = [
     ...mainContents.map((content) => ({
@@ -53,25 +60,11 @@ export function SearchBar({
     ...activities.map((activity) => ({
       id: activity.id,
       title: activity.title,
-      category: getCategoryLabel(activity.categories),
-      tags: [...activity.tags, ...(activity.technologies || [])],
+      category: activity.category,
+      tags: [...(activity.tags || []), ...(activity.technologies || [])],
       type: "activity" as const,
     })),
   ];
-
-  // 外部からタグを追加する関数を常に定義
-  const addTag = (tag: string) => {
-    if (!selectedTags.includes(tag)) {
-      onTagsChange?.([...selectedTags, tag]);
-    }
-    setIsOpen(true); // タグが追加されたら検索バーを開く
-  };
-
-  // コンポーネントがマウントされた時点で関数を公開
-  useEffect(() => {
-    (window as any).addSearchTag = addTag;
-    console.log("addSearchTag関数を登録しました"); // デバッグ用
-  }, [selectedTags, onTagsChange]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Eye } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ActivityModal } from "@/components/activity-modal";
 import CustomImage from "@/components/ui/custom-image";
@@ -14,7 +14,7 @@ import type { Activity } from "@/data/activities";
 interface SlidingRelatedActivitiesProps {
   title: string;
   activities: Activity[];
-  onTagClick?: (tag: string) => void;
+  onTagClick?: (tag: string) => void; // この行を追加
 }
 
 export function SlidingRelatedActivities({
@@ -64,7 +64,7 @@ export function SlidingRelatedActivities({
   const visibleActivities = activities.slice(currentIndex, currentIndex + 3);
 
   return (
-    <section className="py-16 bg-muted/30">
+    <div className="bg-muted/30 py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">{title}</h2>
 
@@ -179,7 +179,8 @@ export function SlidingRelatedActivities({
         isOpen={isModalOpen}
         onClose={closeModal}
         activity={selectedActivity}
+        onTagClick={onTagClick} // タグクリック処理を渡す
       />
-    </section>
+    </div>
   );
 }
