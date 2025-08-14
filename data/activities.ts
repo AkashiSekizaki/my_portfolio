@@ -65,7 +65,7 @@ export const activities: Activity[] = [
   {
     id: "hackathon-participation",
     title: "学内ハッカソン・初挑戦",
-    image: "",
+    image: "noimage.png",
     description: "ハッカソン初挑戦",
     category: "development",
     tags: ["React", "ハッカソン", "チームワーク", "短期開発"],
@@ -76,7 +76,7 @@ export const activities: Activity[] = [
   {
     id: "ecommerce-site",
     title: "P2hacks2022",
-    image: "",
+    image: "noimage.png",
     description: "ハッカソン2回目の挑戦",
     category: "development",
     tags: ["React", "ハッカソン", "チームワーク", "競技プログラミング"],
@@ -89,7 +89,7 @@ export const activities: Activity[] = [
   {
     id: "team-management",
     title: "おもしろサイトコンテスト",
-    image: "",
+    image: "noimage.png",
     description: "おもしろサイトコンテストの開催",
     category: "leadership",
     tags: ["イベント企画", "マネジメント", "運営", "コミュニティ"],
@@ -100,7 +100,7 @@ export const activities: Activity[] = [
   {
     id: "event-planning",
     title: "comming soon",
-    image: "",
+    image: "noimage.png",
     description: "comming soon",
     category: "leadership",
     tags: ["リーダーシップ", "プロジェクト管理", "チームビルディング"],
@@ -113,7 +113,7 @@ export const activities: Activity[] = [
   {
     id: "ml-research",
     title: "comming soon",
-    image: "",
+    image: "noimage.png",
     description: "comming soon",
     category: "research",
     tags: ["機械学習", "研究", "Python", "データサイエンス"],
@@ -124,7 +124,7 @@ export const activities: Activity[] = [
   {
     id: "data-analysis",
     title: "comming soon",
-    image: "",
+    image: "noimage.png",
     description: "comming soon",
     category: "research",
     tags: ["データ分析", "研究", "統計", "可視化"],
@@ -137,7 +137,7 @@ export const activities: Activity[] = [
   {
     id: "tutoring-system",
     title: "comming soon",
-    image: "",
+    image: "noimage.png",
     description: "comming soon",
     category: "learning",
     tags: ["教育工学", "チュータリング", "学習支援", "教育技術"],
@@ -148,7 +148,7 @@ export const activities: Activity[] = [
   {
     id: "educational-content",
     title: "comming soon",
-    image: "",
+    image: "noimage.png",
     description: "comming soon",
     category: "learning",
     tags: ["教育工学", "イベント企画", "教材開発", "学習コンテンツ"],
