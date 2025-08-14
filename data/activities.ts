@@ -48,7 +48,7 @@ export const activities: Activity[] = [
   {
     id: "fishing-app",
     title: "琵琶湖漁業者向けアプリ開発",
-    image: "/琵琶湖アプリ.png",
+    image: "琵琶湖アプリ.png",
     description: "地域課題解決を目指したアプリ開発",
     category: "development",
     tags: [
