@@ -15,7 +15,7 @@ import {
   PenLine,
   ThumbsUp,
   Award,
-  Book,
+  BookOpen,
   Link,
 } from "lucide-react";
 import type { Activity } from "@/data/activities";
@@ -102,7 +102,7 @@ export function StickyContentLayout({
                     {title}
                   </h2>
                   <h4 className="font-semibold mb-4 text-xl flex items-center">
-                    <Book className="h-5 w-5 mr-2" />
+                    <BookOpen className="h-5 w-5 mr-2" />
                     概要
                   </h4>
                   <p className="text-muted-foreground leading-relaxed text-lg">

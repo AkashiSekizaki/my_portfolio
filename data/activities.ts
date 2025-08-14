@@ -44,6 +44,9 @@ export const activities: Activity[] = [
       "Vercel v0の理解",
       "GitHub Actionsの活用練習",
     ],
+    links: {
+      "GitHub": "https://github.com/AkashiSekizaki/my_portfolio",
+    },
   },
   {
     id: "tyouseisan",

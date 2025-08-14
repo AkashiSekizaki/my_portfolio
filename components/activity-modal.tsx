@@ -8,7 +8,17 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Target, BookOpen, Trophy, Hash } from "lucide-react";
+import {
+  ExternalLink,
+  Target,
+  BookOpen,
+  Award,
+  Hash,
+  PenLine,
+  Link,
+  Tag,
+  ThumbsUp,
+} from "lucide-react";
 import CustomImage from "@/components/ui/custom-image";
 import type { Activity } from "@/data/activities";
 
@@ -64,8 +74,8 @@ export function ActivityModal({
           {activity.innovations && activity.innovations.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-3 flex items-center">
-                <Target className="h-5 w-5 mr-2" />
-                挑戦
+                <ThumbsUp className="h-5 w-5 mr-2" />
+                開発上の工夫・取り組み
               </h3>
               <ul className="space-y-2">
                 {activity.innovations.map((innovation, index) => (
@@ -82,7 +92,7 @@ export function ActivityModal({
           {activity.learnings && activity.learnings.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-3 flex items-center">
-                <BookOpen className="h-5 w-5 mr-2" />
+                <PenLine className="h-5 w-5 mr-2" />
                 学び
               </h3>
               <ul className="space-y-2">
@@ -100,7 +110,7 @@ export function ActivityModal({
           {activity.achievements && activity.achievements.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-3 flex items-center">
-                <Trophy className="h-5 w-5 mr-2" />
+                <Award className="h-5 w-5 mr-2" />
                 実績・成果
               </h3>
               <ul className="space-y-2">
@@ -118,7 +128,7 @@ export function ActivityModal({
           {activity.tags && activity.tags.length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-3 flex items-center">
-                <Hash className="h-5 w-5 mr-2" />
+                <Tag className="h-5 w-5 mr-2" />
                 タグ
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -143,7 +153,7 @@ export function ActivityModal({
           {activity.links && Object.keys(activity.links).length > 0 && (
             <div>
               <h3 className="text-lg font-semibold mb-3 flex items-center">
-                <ExternalLink className="h-5 w-5 mr-2" />
+                <Link className="h-5 w-5 mr-2" />
                 関連リンク
               </h3>
               <div className="flex flex-wrap gap-2">
