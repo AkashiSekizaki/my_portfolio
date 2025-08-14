@@ -53,7 +53,7 @@ export function SearchBar({
       id: content.id,
       title: content.title,
       category: content.category,
-      tags: content.technologies,
+      tags: content.technologies, // main-contentsはtechnologiesを使用
       type: "main" as const,
       page: content.page,
     })),
@@ -61,7 +61,7 @@ export function SearchBar({
       id: activity.id,
       title: activity.title,
       category: activity.category,
-      tags: [...(activity.tags || []), ...(activity.technologies || [])],
+      tags: activity.tags || [], // activitiesはtagsのみ使用
       type: "activity" as const,
     })),
   ];

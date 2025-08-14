@@ -4,11 +4,10 @@ export interface Activity {
   description: string;
   image: string;
   category: string;
-  technologies: string[];
+  tags: string[]; // technologiesを削除してtagsのみに統合
   innovations?: string[];
   learnings?: string[];
   achievements?: string[];
-  tags?: string[];
   links?: Record<string, string>;
 }
 
@@ -34,14 +33,17 @@ export const activities: Activity[] = [
     image: "/ポートフォリオ.png",
     description: "自身の活動を伝えるアプリケーション",
     category: "development",
-    technologies: ["Vue.js", "フィールドワーク", "マリンIT", "開発"],
+    tags: ["AI", "CD自動化", "個人開発", "React", "TypeScript"],
     innovations: [
       "GitHub ActionsによるCDの自動化",
       "Vercel v0，GitHub Copilotを活用したコード生成",
     ],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
-    tags: ["Vue.js", "フィールドワーク", "マリンIT", "開発"],
+    learnings: ["AIの活用", "CDの自動化の重要性", "自身の活動の振り返り"],
+    achievements: [
+      "ポートフォリオサイトの公開",
+      "Vercel v0の理解",
+      "GitHub Actionsの活用練習",
+    ],
   },
   {
     id: "fishing-app",
@@ -49,11 +51,16 @@ export const activities: Activity[] = [
     image: "/琵琶湖アプリ.png",
     description: "地域課題解決を目指したアプリ開発",
     category: "development",
-    technologies: ["Vue.js", "フィールドワーク", "マリンIT", "開発"],
+    tags: [
+      "Vue.js",
+      "フィールドワーク",
+      "マリンIT",
+      "地域課題解決",
+      "チーム開発",
+    ],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["Vue.js", "フィールドワーク", "マリンIT", "開発"],
   },
   {
     id: "hackathon-participation",
@@ -61,11 +68,10 @@ export const activities: Activity[] = [
     image: "",
     description: "ハッカソン初挑戦",
     category: "development",
-    technologies: ["React", "チームワーク"],
+    tags: ["React", "ハッカソン", "チームワーク", "短期開発"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["React", "ハッカソン"],
   },
   {
     id: "ecommerce-site",
@@ -73,11 +79,10 @@ export const activities: Activity[] = [
     image: "",
     description: "ハッカソン2回目の挑戦",
     category: "development",
-    technologies: ["React", "チームワーク"],
+    tags: ["React", "ハッカソン", "チームワーク", "競技プログラミング"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["React", "ハッカソン"],
   },
 
   // リーダーシップの関連活動
@@ -87,11 +92,10 @@ export const activities: Activity[] = [
     image: "",
     description: "おもしろサイトコンテストの開催",
     category: "leadership",
-    technologies: ["イベント企画", "マネジメント"],
+    tags: ["イベント企画", "マネジメント", "運営", "コミュニティ"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["イベント企画", "マネジメント"],
   },
   {
     id: "event-planning",
@@ -99,11 +103,10 @@ export const activities: Activity[] = [
     image: "",
     description: "comming soon",
     category: "leadership",
-    technologies: ["リーダーシップ"],
+    tags: ["リーダーシップ", "プロジェクト管理", "チームビルディング"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["リーダーシップ"],
   },
 
   // 研究の関連活動
@@ -113,11 +116,10 @@ export const activities: Activity[] = [
     image: "",
     description: "comming soon",
     category: "research",
-    technologies: ["機械学習", "研究"],
+    tags: ["機械学習", "研究", "Python", "データサイエンス"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["機械学習", "研究"],
   },
   {
     id: "data-analysis",
@@ -125,11 +127,10 @@ export const activities: Activity[] = [
     image: "",
     description: "comming soon",
     category: "research",
-    technologies: ["データ分析", "研究"],
+    tags: ["データ分析", "研究", "統計", "可視化"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["データ分析", "研究"],
   },
 
   // 学習支援の関連活動
@@ -139,11 +140,10 @@ export const activities: Activity[] = [
     image: "",
     description: "comming soon",
     category: "learning",
-    technologies: ["教育工学", "チュータリング"],
+    tags: ["教育工学", "チュータリング", "学習支援", "教育技術"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["教育工学", "チュータリング"],
   },
   {
     id: "educational-content",
@@ -151,11 +151,10 @@ export const activities: Activity[] = [
     image: "",
     description: "comming soon",
     category: "learning",
-    technologies: ["教育工学", "イベント企画"],
+    tags: ["教育工学", "イベント企画", "教材開発", "学習コンテンツ"],
     innovations: ["comming soon"],
     learnings: ["comming soon"],
     achievements: ["comming soon"],
-    tags: ["教育工学", "イベント企画"],
   },
 ];
 
@@ -167,12 +166,9 @@ export function getActivitiesByCategory(category: string): Activity[] {
 export function getAllActivityTags(): string[] {
   const tags = new Set<string>();
   activities.forEach((activity) => {
-    // tagsがある場合のみ処理
+    // tagsのみ処理
     if (activity.tags) {
       activity.tags.forEach((tag) => tags.add(tag));
-    }
-    if (activity.technologies) {
-      activity.technologies.forEach((tech) => tags.add(tech));
     }
   });
   return Array.from(tags).sort();

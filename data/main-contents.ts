@@ -220,7 +220,9 @@ export const mainContents: MainContent[] = [
 export function getAllMainContentTags(): string[] {
   const tags = new Set<string>();
   mainContents.forEach((content) => {
-    content.technologies.forEach((tech) => tags.add(tech));
+    if (content.technologies) {
+      content.technologies.forEach((tech) => tags.add(tech));
+    }
   });
   return Array.from(tags).sort();
 }

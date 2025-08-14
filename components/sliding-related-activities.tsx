@@ -14,7 +14,7 @@ import type { Activity } from "@/data/activities";
 interface SlidingRelatedActivitiesProps {
   title: string;
   activities: Activity[];
-  onTagClick?: (tag: string) => void; // この行を追加
+  onTagClick?: (tag: string) => void;
 }
 
 export function SlidingRelatedActivities({
@@ -126,25 +126,24 @@ export function SlidingRelatedActivities({
                         {activity.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
-                        {activity.technologies?.slice(0, 3).map((tech) => (
+                        {activity.tags?.slice(0, 3).map((tag) => (
                           <Badge
-                            key={tech}
+                            key={tag}
                             variant="secondary"
                             className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors"
                             onClick={(e) => {
                               e.stopPropagation();
-                              onTagClick?.(tech);
+                              onTagClick?.(tag);
                             }}
                           >
-                            {tech}
+                            {tag}
                           </Badge>
                         ))}
-                        {activity.technologies &&
-                          activity.technologies.length > 3 && (
-                            <Badge variant="outline">
-                              +{activity.technologies.length - 3}
-                            </Badge>
-                          )}
+                        {activity.tags && activity.tags.length > 3 && (
+                          <Badge variant="outline">
+                            +{activity.tags.length - 3}
+                          </Badge>
+                        )}
                       </div>
                     </CardContent>
                   </Card>
@@ -179,7 +178,7 @@ export function SlidingRelatedActivities({
         isOpen={isModalOpen}
         onClose={closeModal}
         activity={selectedActivity}
-        onTagClick={onTagClick} // タグクリック処理を渡す
+        onTagClick={onTagClick}
       />
     </div>
   );
