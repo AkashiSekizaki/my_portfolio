@@ -51,7 +51,7 @@ export const activities: Activity[] = [
   {
     id: "tyouseisan",
     title: "調整さん便利ツール",
-    image: "noimage.png",
+    image: "調整さん画面.png",
     description: "comming soon",
     category: "development",
     tags: ["個人開発", "comming soon"],
@@ -62,7 +62,7 @@ export const activities: Activity[] = [
   {
     id: "et-robo",
     title: "ETロボコンの画像処理",
-    image: "noimage.png",
+    image: "ETロボコン画像処理.png",
     description: "comming soon",
     category: "development",
     tags: ["個人開発", "機能要件・非機能要件", "comming soon"],
@@ -73,7 +73,7 @@ export const activities: Activity[] = [
   {
     id: "ai-mail-anonymization",
     title: "AIによるメール添削で匿名化",
-    image: "noimage.png",
+    image: "AIメール添削支援.png",
     description: "comming soon",
     category: "development",
     tags: ["個人開発", "自然言語処理", "comming soon"],
@@ -84,7 +84,7 @@ export const activities: Activity[] = [
   {
     id: "farst-hackathon-bus",
     title: "パス経路可視化ツール：初ハッカソン",
-    image: "noimage.png",
+    image: "バスアプリ.png",
     description: "comming soon",
     category: "development",
     tags: ["チーム開発", "ハッカソン", "comming soon"],
@@ -95,7 +95,7 @@ export const activities: Activity[] = [
   {
     id: "ship-position-data-tool",
     title: "研究で使用する漁船の位置情報データ自動取得ツール",
-    image: "noimage.png",
+    image: "船跡取得.png",
     description: "comming soon",
     category: "development",
     tags: ["個人開発", "マリンIT", "comming soon"],
@@ -123,7 +123,7 @@ export const activities: Activity[] = [
   {
     id: "digital-archive-system",
     title: "デジタルアーカイブシステム開発バイト",
-    image: "noimage.png",
+    image: "デジタルアーカイブ.png",
     description: "comming soon",
     category: "development",
     tags: ["チーム開発", "comming soon"],
@@ -134,9 +134,20 @@ export const activities: Activity[] = [
 
   // リーダーシップの関連活動
   {
+    id: "hacks-leader",
+    title: "1年生2名とハッカソンに挑戦！",
+    image: "fishhacks.JPG",
+    description: "comming soon",
+    category: "leadership",
+    tags: ["リーダーシップ", "comming soon"],
+    innovations: ["comming soon"],
+    learnings: ["comming soon"],
+    achievements: ["comming soon"],
+  },
+  {
     id: "osc",
     title: "おもしろサイトコンテスト開催",
-    image: "noimage.png",
+    image: "OSC2025.png",
     description: "comming soon",
     category: "leadership",
     tags: ["リーダーシップ", "イベント企画", "comming soon"],
@@ -146,8 +157,8 @@ export const activities: Activity[] = [
   },
   {
     id: "dayly-report-system",
-    title: "日報に新しい価値を与えるシステムの提案を牽引",
-    image: "noimage.png",
+    title: "日報に新しい価値を与えるシステムの検討",
+    image: "日報アプリ.png",
     description: "comming soon",
     category: "leadership",
     tags: ["リーダーシップ", "comming soon"],
@@ -157,8 +168,9 @@ export const activities: Activity[] = [
   },
   {
     id: "mll-leader",
-    title: "メタ学習ラボ チューター長",
-    image: "noimage.png",
+    title: "メタ学習ラボ チューター長（写真は未来大学HPより引用）",
+    image:
+      "https://www.fun.ac.jp/wp-content/uploads/2020/02/CML_logo-193x165.png",
     description: "comming soon",
     category: "leadership",
     tags: ["リーダーシップ", "comming soon"],
@@ -168,8 +180,8 @@ export const activities: Activity[] = [
   },
   {
     id: "oc",
-    title: "オープンキャンパスへの出展を発案",
-    image: "noimage.png",
+    title: "オープンキャンパスへの出展を発案（写真は未来大学HPより引用）",
+    image: "https://www.fun.ac.jp/wp-content/uploads/2025/07/20240804_187.jpg",
     description: "comming soon",
     category: "leadership",
     tags: ["リーダーシップ", "イベント企画", "comming soon"],
@@ -177,21 +189,11 @@ export const activities: Activity[] = [
     learnings: ["comming soon"],
     achievements: ["comming soon"],
   },
-  {
-    id: "hacks-leader",
-    title: "1年生2名とハッカソンに挑戦！",
-    image: "noimage.png",
-    description: "comming soon",
-    category: "leadership",
-    tags: ["リーダーシップ", "comming soon"],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
-  },
+
   {
     id: "cross-team-education-event",
-    title: "【頓挫】 開発の課外活動のチームを跨いだ教育イベントの企画",
-    image: "noimage.png",
+    title: "【失敗】 開発の課外活動のチームを跨いだ教育イベントの企画",
+    image: "OSC企画書.png",
     description: "comming soon",
     category: "leadership",
     tags: ["リーダーシップ", "イベント企画", "comming soon"],
@@ -205,7 +207,7 @@ export const activities: Activity[] = [
     id: "corona-tutoring-study",
     title:
       "コロナ前後のチュータリングにおけるチューター・チューティを対象とした印象の検討",
-    image: "noimage.png",
+    image: "印象研究.JPG",
     description: "comming soon",
     category: "research",
     tags: ["共同研究", "comming soon"],
@@ -220,7 +222,7 @@ export const activities: Activity[] = [
   {
     id: "tutoring-before-after-study",
     title: "【取り組み中】 チューターになる前後における意識の変化",
-    image: "noimage.png",
+    image: "チューター前後研究.jpg",
     description: "comming soon",
     category: "research",
     tags: ["共同研究", "comming soon"],
@@ -233,7 +235,7 @@ export const activities: Activity[] = [
   {
     id: "hacks-mentor",
     title: "P2hacks2024 メンター",
-    image: "noimage.png",
+    image: "p2hacks-メンター.png",
     description: "comming soon",
     category: "learning",
     tags: ["学習支援", "comming soon"],
@@ -244,7 +246,7 @@ export const activities: Activity[] = [
   {
     id: "education-event-my-team",
     title: "開発チーム内技術教育",
-    image: "noimage.png",
+    image: "チーム内教育.jpg",
     description: "comming soon",
     category: "learning",
     tags: ["学習支援", "comming soon"],
