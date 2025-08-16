@@ -75,7 +75,7 @@ export function ActivityModal({
             <div>
               <h3 className="text-lg font-semibold mb-3 flex items-center">
                 <ThumbsUp className="h-5 w-5 mr-2" />
-                開発上の工夫・取り組み
+                工夫・取り組み
               </h3>
               <ul className="space-y-2">
                 {activity.innovations.map((innovation, index) => (

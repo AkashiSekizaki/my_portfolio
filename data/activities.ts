@@ -330,7 +330,8 @@ export const activities: Activity[] = [
     id: "hacks-leader",
     title: "1年生2名とハッカソンに挑戦！",
     image: "fishhacks.JPG",
-    description: "comming soon",
+    description:
+      "プログラミング歴半年の1年生2名とハッカソンに参加．共通のビジョン・方針を決め，合意形成を取った．これにより，経験者の自分に対して，意見ができる下地を作った．また，モチベーションを高めるために「褒め合い会」の実施，アイデアのフレームワークの教え合いなど，学びの場のしての取り組みも行った．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -353,15 +354,33 @@ export const activities: Activity[] = [
       "HTML",
       "CSS",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "初日にメンバーで「個人ごとの目標・目指すものを言語化して共有」、「採点基準の深堀り（なぜそのような配点になっているのか？そこから，どんなことを評価したいのか？）」をし、最終的に「チームの目標（軸）」「役割分担」を決定",
+      "共通認識を持っている「チームの目標（軸）」に基づいた，意思決定を行った",
+      "朝の1分間スピーチで話をする下地を作る",
+      "クロージングで 「褒め合い会」 を実施し，１日をプラスで終える",
+      "オズボーンのチェックリストを用いて，アイデアのフレームワークを教える",
+    ],
+    learnings: [
+      "リーダーシップの重要性",
+      "チームビルディングの難しさ",
+      "メンバーとのコミュニケーションの大切さ",
+      "メンバーの成長を促すための環境作り",
+    ],
+    achievements: [
+      "CyberAgent賞受賞",
+      "メンバーの一人が自分がメンターを務める別のハッカソンに参加，賞を受賞する！",
+    ],
+    links: {
+      "GitHub": "https://github.com/FISH-HACKATHON/Fun-i-Con",
+    },
   },
   {
     id: "osc",
     title: "おもしろサイトコンテスト開催",
     image: "OSC2025.png",
-    description: "comming soon",
+    description:
+      "1ヶ月でアイデア出し，実装，プレゼンまでを一人一人に取り組んでもらう開発イベント．Fin-i-Conチームのチュートリアルとして実施．開発が初めて / 経験はあるが，自信のないメンバーなど様々な属性がいる中で，目標を達成するための技術力の底上げを目的としたイベントを開催．また，実装上の課題を一緒に解決することで，必然的に交流が生まれ，チームの結束力を高めることを目指した．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -379,15 +398,34 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "会社へのアプリ導入を目指すため，アイデア出しから実装，プレゼンまでを行うイベントにした",
+      "チーム全員で今後の活動を行うために，誰かに頼って終わってしまう可能性のあるチーム単位での活動ではなく，個人単位での活動にした",
+      "上記のような目的を全員に説明を行った",
+      "多少高い難易度に設定することで，質問が発生するようにした",
+      "開発が完全に初めてのメンバー向けに，簡単な技術教育を行った",
+      "発表会では，メンバーとオンライン参加のサポート企業の方も一緒に盛り上がれるように，実況チャンネルを用意した",
+      "モチベーションの1つとして，賞品を用意した / サポート企業の方にもご用意いただいた",
+    ],
+    learnings: [
+      "イベント設計の難しさ",
+      "メンターとしての経験",
+      "イベントの楽しさ",
+    ],
+    achievements: [
+      "メンバーの成長！",
+      "実況チャンネルのコメント数100件以上",
+      "楽しかった度 4.75 / 5 !",
+      "学びになった度 4.83 / 5 !",
+      "外部発表でもお褒めの言葉をもらう",
+    ],
   },
   {
     id: "dayly-report-system",
     title: "日報に新しい価値を与えるシステムの検討",
     image: "日報アプリ.png",
-    description: "comming soon",
+    description:
+      "サポート企業のクロスティHDでは，企業が適切に給与を支払うとともに，上司の方が業務内容を把握する目的で，日報をつけている．この日報をただの業務内容の報告ではなく，ナレッジ（仕事のノウハウなど）や日々の学びの蓄積・共有の手段に変えていくアプリケーションの開発を目指している．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -405,16 +443,28 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "企業の課題を理解する",
+      "ペルソナに基づいて全員でアイデアを出す",
+      "カスタマージャーニーマップなどの手法を用いて，ペルソナの行動を深堀りする",
+      "アイデアを出しやすい雰囲気を作る",
+    ],
+    learnings: [
+      "ペルソナの重要性",
+      "アイデア出しの難しさ",
+      "アイデアをまとめる難しさ",
+      "価値を言語化する難しさ",
+      "チームビルディングの大切さ",
+    ],
+    achievements: ["アイデアの決定", "メンバーの共通認識の形成", "要件定義"],
   },
   {
     id: "mll-leader",
     title: "メタ学習ラボ チューター長（写真は未来大学HPより引用）",
     image:
       "https://www.fun.ac.jp/wp-content/uploads/2020/02/CML_logo-193x165.png",
-    description: "comming soon",
+    description:
+      "学内の自律学習支援組織のチューター長を務める．シフトの作成などの平常業務だけでなく，チューターの教育の仕組みの提案や，共同研究の働きかけ，オープンキャンパスへの出展など発案した．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -428,9 +478,21 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "平常業務を忘れないように，チェックリストを作成",
+      "積極的にメンバーと会話・相談をする",
+      "アイデアはなるべくオープンな場で発言する",
+    ],
+    learnings: [
+      "協力してくれるメンバー,教員の皆さんの存在の大切さ",
+      "アイデアは積極的に発信した方が良い",
+    ],
+    achievements: [
+      "平常通りの運営",
+      "共同研究の立ち上げ",
+      "組織内の教育の仕組みの提案",
+      "オープンキャンパスへの出展",
+    ],
   },
   {
     id: "oc",
@@ -533,7 +595,7 @@ export const activities: Activity[] = [
   // 学習支援の関連活動
   {
     id: "hacks-mentor",
-    title: "P2hacks2024 メンター",
+    title: "P2hacks2024 メンター（写真は未来大学パンフレットより引用）",
     image: "p2hacks-メンター.png",
     description: "comming soon",
     category: "learning",

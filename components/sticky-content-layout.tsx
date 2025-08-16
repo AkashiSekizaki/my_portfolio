@@ -154,7 +154,7 @@ export function StickyContentLayout({
                 <div>
                   <h4 className="font-semibold mb-4 text-xl flex items-center">
                     <ThumbsUp className="h-5 w-5 mr-2" />
-                    開発上の工夫・取り組み
+                    工夫・取り組み
                   </h4>
                   <ul className="text-muted-foreground space-y-3">
                     {innovations.map((innovation, i) => (
