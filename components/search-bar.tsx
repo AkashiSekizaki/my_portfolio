@@ -118,7 +118,7 @@ export function SearchBar({
         className="flex items-center space-x-2"
       >
         <Search className="h-4 w-4" />
-        <span>検索</span>
+        <span>タグで検索</span>
         {selectedTags.length > 0 && (
           <Badge variant="secondary" className="ml-1">
             {selectedTags.length}
