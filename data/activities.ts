@@ -28,6 +28,41 @@ export function getCategoryLabel(categories: string[] | undefined): string {
 export const activities: Activity[] = [
   // 開発経験の関連活動
   {
+    id: "et-robo",
+    title: "【大会期間中のため，取り組みのみ記載】 ETロボコンの画像処理",
+    image: "ETロボコン画像処理.png",
+    description:
+      "ETロボコンの画像処理担当．チームの定めた機能要件・非機能要件を満たす画像処理を請け負う．方針の決定やモデルに組み込むために，メンバーに説明を行う．",
+    category: "development",
+    tags: [
+      "課外活動",
+      "開発",
+      "チーム活動",
+      "個人活動",
+      "アイデア",
+      "画像処理",
+      "機能要件・非機能要件",
+      "コミュニケーション",
+      "AIコーディング",
+      "プレゼン・説明",
+      "ドキュメント",
+      "Python",
+    ],
+    innovations: [
+      "ルールや規約の書類を読み，ETロボコン歴の長いメンバーと認識のすり合わせを行う",
+      "上記制約に合わせて，画像処理の手法を選定",
+      "軽量な処理を書籍で勉強",
+      "仕組みの説明スライドを作成し，メンバーと手法についての議論を行う",
+      "AIコーディングで，トライアンドエラーを繰り返す",
+    ],
+    learnings: [
+      "チーム内での技術共有の重要性",
+      "古典的な画像処理の理解",
+      "メンバーとのコミュニケーションの重要性",
+    ],
+    achievements: ["手法説明スライド複数作成", "大会結果をお待ちください...！"],
+  },
+  {
     id: "portfolio-site",
     title: "ポートフォリオサイト作成",
     image: "ポートフォリオ.png",
@@ -59,13 +94,16 @@ export const activities: Activity[] = [
     ],
     links: {
       "GitHub": "https://github.com/AkashiSekizaki/my_portfolio",
+      "Xでシェア":
+        "https://twitter.com/intent/tweet?text=関﨑証のポートフォリオをチェック！&url=https://akashisekizaki.github.io/my_portfolio/",
     },
   },
   {
     id: "tyouseisan",
     title: "調整さん便利ツール",
     image: "調整さん画面.png",
-    description: "comming soon",
+    description:
+      "学習支援組織や飲み会などで使う調整さんの日程入力が楽になるツール．実際に友人たちに使ってもらっているアプリ！",
     category: "development",
     tags: [
       "課外活動",
@@ -83,39 +121,32 @@ export const activities: Activity[] = [
       "CSS",
       "GitHub Pages",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
-  },
-  {
-    id: "et-robo",
-    title: "ETロボコンの画像処理",
-    image: "ETロボコン画像処理.png",
-    description: "comming soon",
-    category: "development",
-    tags: [
-      "課外活動",
-      "開発",
-      "チーム活動",
-      "個人活動",
-      "アイデア",
-      "画像処理",
-      "機能要件・非機能要件",
-      "コミュニケーション",
-      "AIコーディング",
-      "プレゼン・説明",
-      "ドキュメント",
-      "Python",
+    innovations: [
+      "クリップボードにコピーする際の関数が，SSL認証の有無に関わらず動作するようにする",
+      "上から入力させることで，流れを感じてもらう",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    learnings: [
+      "ユーザーテストの重要性",
+      "自分の作ったものを喜んでもらえる体験",
+    ],
+    achievements: [
+      "10名以上の友人に使用してもらった",
+      "GitHub Pagesでの公開",
+      "チーム内発表会優勝",
+    ],
+    links: {
+      "公開リンク":
+        "https://akashisekizaki.github.io/chouseisan_more_convenient/",
+      "GitHub": "https://github.com/AkashiSekizaki/chouseisan_more_convenient",
+    },
   },
+
   {
     id: "ai-mail-anonymization",
     title: "AIによるメール添削で匿名化",
     image: "AIメール添削支援.png",
-    description: "comming soon",
+    description:
+      "AIにメール添削をする際に，手動で個人情報を消している友人を見つけた．そこで，それを自動化するツールを作成した．また，自身の開催する開発イベントでプレゼンを行った．",
     category: "development",
     tags: [
       "課外活動",
@@ -134,15 +165,33 @@ export const activities: Activity[] = [
       "CSS",
       "GitHub Pages",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "開発は初めてのメンバーにも技術を使ってできることを見せる",
+      "課題の背景，技術でできること，嬉しさ，開発上の失敗などをプレゼンで説明",
+      "アプリの立ち位置を明確にして，あえてAIのAPIを使わない",
+    ],
+    learnings: [
+      "プレゼンの構成",
+      "形態素解析の理解",
+      "開発に興味を持ってもらうための開発",
+    ],
+    achievements: ["ユーザーに使ってもらう", "チーム内発表"],
+    links: {
+      "プレゼン資料":
+        "https://docs.google.com/presentation/d/1mSHcIrZzpEIUOkFYXL962ySl76yrwEKqRIJCYPAm8Xw/edit?usp=sharing",
+      "デモ動画":
+        "https://drive.google.com/file/d/1C10klO6orazvi0fFvgR0D-K5YC7pkGUb/view?usp=sharing",
+      "公開リンク":
+        "https://akashisekizaki.github.io/Anonymized_Email_Support/",
+      "GitHub": "https://github.com/AkashiSekizaki/Anonymized_Email_Support",
+    },
   },
   {
     id: "first-hackathon-bus",
     title: "バス経路可視化ツール：初ハッカソン",
     image: "バスアプリ.png",
-    description: "comming soon",
+    description:
+      "初挑戦した 「函館の交通問題をハックする」 がテーマのハッカソン．函館のバス路線が見づらいことに着目したプロダクトを作成．実装上のレベルは低いと感じるが，開発の原点です！",
     category: "development",
     tags: [
       "課外活動",
@@ -157,19 +206,31 @@ export const activities: Activity[] = [
       "JavaScript",
       "HTML",
       "CSS",
+      "Google Map API",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "バス経路のAPIがなかったため，バス停の位置情報間に対する車の経路をGoogle Map APIで取得することで，バス路線を擬似的に再現する",
+      "プロダクトのアイデアを全員で考える",
+    ],
+    learnings: [
+      "開発の難しさ",
+      "HTML, CSS, JavaScriptという技術の存在",
+      "自身の積極性のなさ",
+    ],
+    achievements: [
+      "ハッカソン最優秀賞受賞（アイデアが主に評価された）",
+      "交流会で社長さんと話す機会があったが何も話せず「こんな素晴らしい機会を活かせない自身の性格は勿体無い！」と思い，自身の行動を変えるきっかけになった",
+    ],
   },
   {
     id: "ship-position-data-tool",
     title: "研究で使用する漁船の位置情報データ自動取得ツール",
     image: "船跡取得.png",
-    description: "comming soon",
+    description:
+      "研究で使用する予定の漁船の船跡データは，別の研究で収集・活用されている．そのデータを自動で取得するツールを作成し，研究の効率化を図る．",
     category: "development",
     tags: [
-      "課外活動",
+      "講義",
       "開発",
       "研究",
       "個人活動",
@@ -179,15 +240,22 @@ export const activities: Activity[] = [
       "AIコーディング",
       "Python",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: ["cronを使用して，定期的にデータを取得する"],
+    learnings: [
+      "自動化しようとする意識",
+      "AIツールで解決できない時には，自分で調べた方が早い",
+    ],
+    achievements: [
+      "自動化の達成",
+      "漁業者の方に撮影データと船跡データをBlu-rayに焼いたものをお渡しできた",
+    ],
   },
   {
     id: "biwa-lake-app",
     title: "琵琶湖漁業者向けアプリ開発",
-    image: "琵琶湖アプリ.png",
-    description: "地域課題解決を目指したアプリ開発",
+    image: "琵琶湖での説明.jpg",
+    description:
+      "琵琶湖の漁業者さんに向けたアプリを開発．漁協全体の最適化や技術継承を目指したが，漁業者さんからは「自分の漁場が明確になることに抵抗感がある」という旨のフィードバックを受けた．",
     category: "development",
     tags: [
       "講義",
@@ -205,15 +273,24 @@ export const activities: Activity[] = [
       "HTML",
       "CSS",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "リーダーとして全体のスケジュールとタスクを管理",
+      "活動時間に他メンバーが作業ができるように先回りして準備",
+    ],
+    learnings: [
+      "現場のニーズ理解の重要性",
+      "全体最適化と個別最適化のバランス",
+      "リーダーシップの難しさ",
+      "仕事の巻き取りすぎは良くない",
+    ],
+    achievements: ["現場での漁業者さん，水産課の方々への説明会"],
   },
   {
     id: "digital-archive-system",
     title: "デジタルアーカイブシステム開発バイト",
     image: "デジタルアーカイブ.png",
-    description: "comming soon",
+    description:
+      "函館市には歴史的な資料が多く存在する．それらをデジタル化し，公開するシステムの開発に関わった．主に，先方とのメールでのコミュニケーションや，ドキュメントに沿っての資料追加，バグ修正を行った",
     category: "development",
     tags: [
       "課外活動",
@@ -223,15 +300,29 @@ export const activities: Activity[] = [
       "公開・活用",
       "コミュニケーション",
       "Git/GitHub",
-      "Rudy on Rails",
+      "Ruby on Rails",
       "HTML",
       "Tailwind",
       "CSS",
       "GitHub Actions",
+      "メールのやり取り",
+      "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "ドメイン知識の理解",
+      "先輩たちのコードの引き継ぎ",
+      "先方とのメールのやり取り",
+      "ドキュメントの更新",
+    ],
+    learnings: [
+      "ドキュメントの重要性",
+      "新規技術のキャッチアップの難しさ",
+      "引き継いだコードの理解",
+      "メールの書き方",
+    ],
+    achievements: [
+      "先方とのコミュニケーションを通じて，「仕事」の進め方を学ぶ",
+    ],
   },
 
   // リーダーシップの関連活動
