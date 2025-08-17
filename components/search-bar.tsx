@@ -218,8 +218,8 @@ export function SearchBar({
                               .map((matchedTag) => (
                                 <Badge
                                   key={matchedTag}
-                                  variant="secondary"
-                                  className="text-xs bg-primary/10 text-primary border-primary/20"
+                                  variant="default"
+                                  className="text-xs"
                                 >
                                   {matchedTag}
                                 </Badge>
