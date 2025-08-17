@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 // next/imageの代わりにCustomImageを使用
 import CustomImage from "@/components/ui/custom-image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Trophy, Medal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const photos = [
@@ -252,19 +252,35 @@ export function HeroPage() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-3 text-lg">主要な実績</h3>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="secondary">
-                  北海道アプリコンテスト 北海道経済産業局長賞 受賞
-                </Badge>
-                <Badge variant="secondary">
-                  ITTPC CRLA レベル1チューター資格 取得
-                </Badge>
-                <Badge variant="secondary">
-                  全国JOCジュニアオリンピック出場
-                </Badge>
-                <Badge variant="secondary">未来大学賞 複数受賞</Badge>
-                <Badge variant="secondary">学内ハッカソン 複数受賞</Badge>
+              <h3 className="font-semibold mb-4 text-lg flex items-center">
+                <Trophy className="h-5 w-5 mr-3 text-primary" />
+                主要な実績
+              </h3>
+              <div className="bg-muted/30 rounded-lg p-6">
+                <div className="space-y-0">
+                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
+                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                    <span>
+                      北海道アプリコンテスト 北海道経済産業局長賞 受賞
+                    </span>
+                  </div>
+                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
+                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                    <span>ITTPC CRLA レベル1チューター資格 取得</span>
+                  </div>
+                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
+                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                    <span>全国JOCジュニアオリンピック出場</span>
+                  </div>
+                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
+                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                    <span>未来大学賞 複数受賞</span>
+                  </div>
+                  <div className="flex items-center py-3">
+                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                    <span>学内ハッカソン 複数受賞</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
