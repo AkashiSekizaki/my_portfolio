@@ -38,9 +38,13 @@ export default function Home() {
 
   const handlePageChange = (newPage: string) => {
     setIsTransitioning(true);
+
     setTimeout(() => {
       setCurrentPage(newPage);
       setIsTransitioning(false);
+
+      // アニメーション完了後に画面の一番上に即座に移動
+      window.scrollTo(0, 0);
     }, 300);
   };
 
