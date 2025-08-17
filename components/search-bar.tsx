@@ -132,7 +132,7 @@ export function SearchBar({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute right-0 top-full mt-2 w-96 z-50"
+            className="absolute right-0 top-full mt-2 w-80 sm:w-96 z-50"
           >
             <Card>
               <CardHeader className="pb-3">

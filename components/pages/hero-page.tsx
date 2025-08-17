@@ -30,8 +30,8 @@ const photos = [
 const profileData = [
   { label: "出身", value: "北海道函館市" },
   { label: "卒業予定", value: "2027年3月" },
-  { label: "趣味", value: "ダイビング、旅行、グルメ、コーヒー" },
-  { label: "喜び", value: "人に喜んでもらうとき、成果が出たとき" },
+  { label: "趣味", value: "ダイビング、沖縄旅行、グルメ" },
+  { label: "喜び", value: "人に喜んでもらうことができたとき" },
 ];
 
 // 価値観データ
@@ -241,7 +241,7 @@ export function HeroPage() {
                         className="border-b border-muted-foreground/20 last:border-b-0"
                       >
                         <td className="py-3 pr-6 font-medium text-muted-foreground w-32">
-                          {item.label}：
+                          {item.label}
                         </td>
                         <td className="py-3 text-foreground">{item.value}</td>
                       </tr>
