@@ -5,7 +5,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 // next/imageの代わりにCustomImageを使用
 import CustomImage from "@/components/ui/custom-image";
-import { ChevronLeft, ChevronRight, Trophy, Medal } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Trophy,
+  Medal,
+  Flame,
+  School,
+  History,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const photos = [
@@ -30,7 +38,7 @@ const photos = [
 const profileData = [
   { label: "出身", value: "北海道函館市" },
   { label: "卒業予定", value: "2027年3月" },
-  { label: "趣味", value: "ダイビング、沖縄旅行、グルメ" },
+  { label: "趣味", value: "ダイビング，沖縄旅行，グルメ" },
   { label: "喜び", value: "人に喜んでもらうことができたとき" },
 ];
 
@@ -80,67 +88,79 @@ const eventHistory = [
     year: "2018年8月",
     title: "全国JOCジュニアオリンピックカップ夏季水泳競技大会 出場",
     description:
-      "100m×4 フリーリレーで出場。\nチームならさらに大きな成果を挙げられることを実感する。",
+      "100m×4 フリーリレーで出場．\nチームならさらに大きな成果を挙げられることを実感する．",
   },
   {
     year: "2019年12月",
     title: "ダイビングのライセンス取得",
     description:
-      "「海」へ強く興味を持つようになる。\n海×ITの研究（マリンIT）の研究ができる公立はこだて未来大学への進学を決心。",
+      "水泳の経験から，興味のあったダイビングにチャレンジ．\n「海」 へ強く興味を持つようになる．",
+  },
+  {
+    year: "2021年4月",
+    title: "公立はこだて未来大学 入学",
+    description:
+      "「海」への興味から調べたところ，当時ニュースで聞いたAIを使えば水産業の課題を解決できるのではないかと考える．\n水産業×ITの研究（マリンIT）の研究ができる公立はこだて未来大学への進学．",
   },
   {
     year: "2022年5月",
     title: "学内の学習支援組織（メタ学習ラボ）へ所属",
     description:
-      "自身がプログラミングで苦労した経験から、学習支援活動を始める。\n学習支援スキル・コミュニケーションスキルなどを学び始める。",
+      "大学入学から初めてのプログラミングに苦戦したことがあった．\nその経験から，「自分以外にも勉強で苦労している人がいるのではないか」と考え，メタ学習ラボでの活動を始める．学習支援に関連するスキル・コミュニケーションスキルなどを学び始める．",
   },
   {
     year: "2022年10月",
     title: "学内ハッカソン初参加・最優秀賞",
     description:
-      "実践的なものづくりの難しさを知る。\n「プログラミング」ではない「開発」を初めて体験。",
+      "プログラミングを教えていた経験から自信を持ち，友人たちとハッカソンに挑戦",
   },
   {
     year: "2022年12月",
     title: "学内ハッカソン サイボーズ賞受賞＆挫折経験",
     description:
-      "開発力のあるメンバーに頼り切りで終わってしまう。\n悔しさから本格的に開発力をつけると決意する。",
+      "前回のハッカソンメンバーに加えて，もう一人とチームを組みハッカソンに参加．開発力のある新しいメンバーに頼り切りで終わってしまう．\n 悔しさから本格的に開発力をつけると決意．",
   },
   {
     year: "2023年4月",
     title: "「高度ICTコース」へ編入＆開発活動開始",
     description:
-      "ハッカソンの悔しさから、大学院一貫で開発・マネジメントを実践的に学ぶことのできる学内のコースに編入。\n課外活動のチーム開発活動などに参加。",
+      "知識は何もないが，逃げ道を断つために，大学院一貫で開発・マネジメントを実践的に学ぶことのできる「高度ICTコース」に編入．\n 水泳の経験からチーム活動が自分が向いていると思い，チーム開発の課外活動に参加．",
   },
   {
     year: "2024年2月",
     title: "北海道アプリコンテスト 北海道経済産業局長賞 受賞",
     description:
-      "輸入壁紙販売店向けのアプリケーションで受賞。\n店舗への導入・FBを受けての改善などの実績が高く評価される。",
+      "課外活動のチーム（Fun-i-Con）で開発した，輸入壁紙販売店向けのアプリケーションで受賞．\n 店舗への導入・FBを受けての改善などの実績が高く評価される．",
   },
   {
     year: "2024年10月",
     title: "リーダーとしてハッカソンに参加＆CyberAgent賞 受賞",
     description:
-      "プログラミング歴半年の1年生2名とハッカソンに参加。\nリーダーとしてチームづくりを意識。取り組みとプロダクト提案が評価される。",
+      "プログラミング歴半年の1年生2名とハッカソンに参加．\n 高度ICTコース編入後から学んだ知識や経験をもとに，リーダーとしてチームを引っ張る．取り組みとプロダクト提案が評価され，CyberAgent賞を受賞．",
   },
   {
     year: "2024年12月",
     title: "ハッカソンのメンターを経験",
     description:
-      "開発×学習支援スキルを買ってもらい、学内ハッカソンのメンターとして参加。\nハッカソンの挫折を与えてくれた人が運営メンバーのハッカソンであったので、恩返しができた。",
+      "自身が開発を始めるきっかけになった 「開発力のある新しいメンバー」 に開発×学習支援スキルを買ってもらい，その人が運営をしている学内ハッカソンのメンターとして参加．\n 自身の人生を変えてくれた人・ハッカソンに微力ながら恩返しができたこと・自分の2年間が報われた実感を得たことから，最高にハッピーになる．泣いた．",
   },
   {
     year: "2025年4月",
-    title: "活動の中心的役割を経験",
+    title: "現在も複数の活動を継続中",
     description:
-      "学内の学習支援組織（メタ学習ラボ）の学生リーダー、課外活動のチームのリーダー、\n共同研究の立ち上げ、学内イベントの企画などを経験。",
+      "Fun-i-Conのリーダー，ETロボコンチームの画像処理担当，メタ学習ラボの学生リーダー，メタ学習ラボでの共同研究の立ち上げ，学内イベントの企画などを経験などを経験",
   },
   {
     year: "2025年8月",
-    title: "課外活動の学内発表で特別賞 受賞",
+    title: "課外活動の学内発表でFun-i-Conチームが特別賞 受賞",
     description:
-      "15名チームメンバーと共に、立ち上げから半年の取り組みが評価される。",
+      "Fun-i-Conの新体制チームの15名のメンバーと共に，立ち上げから半年の取り組みが評価される．",
+  },
+  {
+    year: "現在 〜 2027年3月",
+    title: "活動を続けつつ，就活中！",
+    description:
+      "複数の活動を続けつつ，就活しています．\n 「良い仲間・人に貢献できる仕事・20代からしっかり働ける」 そんな企業様を探しています！ \n\n これまでの取り組みを本ポートフォリオサイトにまとめていますので，ぜひご覧ください！！ ",
   },
 ];
 
@@ -261,16 +281,18 @@ export function HeroPage() {
                   <div className="flex items-center py-3 border-b border-muted-foreground/20">
                     <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                     <span>
+                      全国JOCジュニアオリンピック出場経験あり（水泳・フリーリレー）
+                    </span>
+                  </div>
+                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
+                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                    <span>
                       北海道アプリコンテスト 北海道経済産業局長賞 受賞
                     </span>
                   </div>
                   <div className="flex items-center py-3 border-b border-muted-foreground/20">
                     <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
                     <span>ITTPC CRLA レベル1チューター資格 取得</span>
-                  </div>
-                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
-                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                    <span>全国JOCジュニアオリンピック出場</span>
                   </div>
                   <div className="flex items-center py-3 border-b border-muted-foreground/20">
                     <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
@@ -288,7 +310,8 @@ export function HeroPage() {
 
         {/* 価値観セクション */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+            <Flame className="h-8 w-8 mr-3" />
             価値観
           </h2>
           <div className="max-w-4xl mx-auto">
@@ -318,7 +341,8 @@ export function HeroPage() {
 
         {/* 学歴セクション */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+            <School className="h-8 w-8 mr-3" />
             学歴
           </h2>
           <div className="max-w-3xl mx-auto">
@@ -342,7 +366,8 @@ export function HeroPage() {
 
         {/* イベント履歴セクション */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold text-center mb-12 flex items-center justify-center">
+            <History className="h-8 w-8 mr-3" />
             自分史
           </h2>
           <div className="max-w-4xl mx-auto">
