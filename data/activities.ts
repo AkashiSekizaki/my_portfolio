@@ -415,8 +415,8 @@ export const activities: Activity[] = [
     achievements: [
       "メンバーの成長！",
       "実況チャンネルのコメント数100件以上",
-      "楽しかった度 4.75 / 5 !",
-      "学びになった度 4.83 / 5 !",
+      "楽しかった度 4.75/5 !",
+      "学びになった度 4.83/5 !",
       "外部発表でもお褒めの言葉をもらう",
     ],
   },
@@ -498,7 +498,8 @@ export const activities: Activity[] = [
     id: "oc",
     title: "オープンキャンパスへの出展を発案（写真は未来大学HPより引用）",
     image: "https://www.fun.ac.jp/wp-content/uploads/2025/07/20240804_187.jpg",
-    description: "comming soon",
+    description:
+      "オープンキャンパスでは，研究についての説明や活発な課外活動の発表が多くあるが，高校生が入った後の1,2年の大学での勉強の不安払拭をする出展はあまりなかった．また，以前別件で参加した際にプログラミングや数学に不安を抱えてる高校生が一定数いた．そこで，所属している自律学習支援組織の存在を知ってもらう出展は，他の出展とは別の価値があると考えた．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -511,16 +512,22 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "メンバー集めのために，直接声がけを行った",
+      "企画を組織の教員に説明し，準備時間を業務（謝金が発生する）になるようにした",
+    ],
+    learnings: [
+      "オープンキャンパスでは保護者の方が意欲的であった",
+      "手軽さの重要性",
+    ],
+    achievements: ["出展の実現", "高校生や保護者の方々との交流"],
   },
-
   {
     id: "cross-team-education-event",
     title: "【失敗】 開発の課外活動のチームを跨いだ教育イベントの企画",
     image: "OSC企画書.png",
-    description: "comming soon",
+    description:
+      "自身が参加している大学の開発演習の課外活動「高度ICT演習」では，学部1年生から修士2年生までの幅広い年齢層が参加している．また，チームに分かれ活動しているが，チーム間で交流する機会はあまりない．加えて，チーム内でリーダーは代替わりされていくが，主要メンバーが抜けてしまうケースもあった．そこで，チームを跨いだ教育イベントを企画した．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -535,9 +542,9 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: ["企画書の作成", "各リーダーへの呼びかけ", "教員への説明"],
+    learnings: ["仲間集めの重要性", "予算確保の難しさ", "企画の難しさ"],
+    achievements: ["実施は現実的でないと判断（失敗）"],
   },
 
   // 研究の関連活動
@@ -546,7 +553,8 @@ export const activities: Activity[] = [
     title:
       "コロナ前後のチュータリングにおけるチューター・チューティを対象とした印象の検討",
     image: "印象研究.JPG",
-    description: "comming soon",
+    description:
+      "所属する自律学習支援組織（メタ学習ラボ）の研究が立ち上がり始まった共同研究の取り組み．チュータリング後アンケートの結果を，コロナ前後で比較し，チューター・チューティの印象の変化を検討した．当時学部4年生の先輩2名と自身（当時学部2年生後期）の3名で2年間取り組んだ．",
     category: "research",
     tags: [
       "課外活動",
@@ -559,9 +567,13 @@ export const activities: Activity[] = [
       "コミュニケーション",
       "プレゼン・説明",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "作業時間を決める",
+      "メタ学習ラボの教員との定期的なゼミ",
+      "定期的な食事会",
+    ],
+    learnings: ["研究についての理解"],
+    achievements: ["日本教育工学会の研究会に論文投稿"],
     links: {
       "論文":
         "https://www.jstage.jst.go.jp/article/jsetstudy/2024/4/2024_JSET2024-4-C2/_pdf/-char/ja",
@@ -571,7 +583,8 @@ export const activities: Activity[] = [
     id: "tutoring-before-after-study",
     title: "【取り組み中】 チューターになる前後における意識の変化",
     image: "チューター前後研究.jpg",
-    description: "comming soon",
+    description:
+      "自身が経験したメタ学習ラボの共同研究の文化を引き継ぎ，希望者とともに共同研究の立ち上げを行った．現在は自身（修士1年）と修士1年，学部2年の3名と取り組んでいる．内容は，チューターになる前後での意識の変化を調査するものである．",
     category: "research",
     tags: [
       "課外活動",
@@ -587,17 +600,25 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "ドキュメント",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "共同研究の進め方のリード",
+      "美味しいご飯chや，timesなどでプレイベートな話の場を設ける",
+    ],
+    learnings: ["人と取り組むことの楽しさ", "研究の進め方の難しさ"],
+    achievements: [
+      "研究データの入手",
+      "定期的なMTG",
+      "（今後の頑張りを記載していきます...！）",
+    ],
   },
 
   // 学習支援の関連活動
   {
     id: "hacks-mentor",
-    title: "P2hacks2024 メンター（写真は未来大学パンフレットより引用）",
-    image: "p2hacks-メンター.png",
-    description: "comming soon",
+    title: "P2hacks2024 メンター（写真は大学HPより引用）",
+    image: "https://www.fun.ac.jp/wp-content/uploads/2025/01/1.png",
+    description:
+      "運営メンバーの一人より，主に学習支援組織のチューターとしての経験を買ってもらい，推薦をもらうことができた．これまでの開発経験からアイデア段階や，Web開発などの相談を受ける．個人的に最も嬉しかったこととして，自身が開発をきっかけになった思い入れのあるハッカソンであり，そこに貢献できたことができたこと．加えて，2ヶ月前に一緒にハッカソンに挑戦した1年生の1人が賞を取ってくれたことがある．",
     category: "learning",
     tags: [
       "課外活動",
@@ -610,15 +631,22 @@ export const activities: Activity[] = [
       "プレゼン・説明",
       "Git/GitHub",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "自分のバリューが出せるメンター対応",
+      "ほぼ初対面のメンバーであったため，運営メンバーに自身の熱意を伝える🔥",
+    ],
+    learnings: ["熱意の重要性", "学内には素晴らしい人間が多い"],
+    achievements: [
+      "新しい人との繋がりができた",
+      "p2hacksとして未来大学賞 受賞",
+    ],
   },
   {
     id: "education-event-my-team",
     title: "開発チーム内技術教育",
     image: "チーム内教育.jpg",
-    description: "comming soon",
+    description:
+      "Fun-i-Conチーム内での技術教育を行う．Fun-i-Conとして，チームで開発を続けていくにあたり，基礎的な知識や開発に対する自信は重要であると考える．しかし，そもそもプログラミングが初めてのメンバーも多い．そこで，開発が初めてのメンバーに対して，HTML, CSS, JavaScriptの基礎をレクチャ．また，アプリ開発とは？についても説明を行った．",
     category: "learning",
     tags: [
       "課外活動",
@@ -641,9 +669,16 @@ export const activities: Activity[] = [
       "CSS",
       "GitHub Pages",
     ],
-    innovations: ["comming soon"],
-    learnings: ["comming soon"],
-    achievements: ["comming soon"],
+    innovations: [
+      "メタ学習ラボで学んだ教え方を実践",
+      "興味を持てそうな題材で教材作成",
+      "JavaScriptの採用率など勉強することが将来どのように役出つのかを話す",
+    ],
+    learnings: ["相手の理解度に応じた教え方の重要性"],
+    achievements: [
+      "メンバーの成長",
+      "おもしろサイトコンテストで全員が作品を作ってこられた",
+    ],
   },
 ];
 
