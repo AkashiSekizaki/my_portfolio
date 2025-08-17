@@ -52,16 +52,18 @@ export function SearchBar({
     ...mainContents.map((content) => ({
       id: content.id,
       title: content.title,
+      description: content.description, // この行を追加
       category: content.category,
-      tags: content.technologies, // main-contentsはtechnologiesを使用
+      tags: content.technologies,
       type: "main" as const,
       page: content.page,
     })),
     ...activities.map((activity) => ({
       id: activity.id,
       title: activity.title,
+      description: activity.description, // この行を追加
       category: activity.category,
-      tags: activity.tags || [], // activitiesはtagsのみ使用
+      tags: activity.tags || [],
       type: "activity" as const,
     })),
   ];
@@ -210,9 +212,19 @@ export function SearchBar({
                                 : result.category}
                             </Badge>
                           </div>
-                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                            {result.description}
-                          </p>
+                          <div className="mt-2 flex flex-wrap gap-1">
+                            {result.tags
+                              .filter((tag) => selectedTags.includes(tag))
+                              .map((matchedTag) => (
+                                <Badge
+                                  key={matchedTag}
+                                  variant="secondary"
+                                  className="text-xs bg-primary/10 text-primary border-primary/20"
+                                >
+                                  {matchedTag}
+                                </Badge>
+                              ))}
+                          </div>
                         </div>
                       ))}
                     </div>
