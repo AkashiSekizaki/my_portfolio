@@ -350,7 +350,6 @@ export const activities: Activity[] = [
       "ドキュメント",
       "Git/GitHub",
       "JavaScript",
-      "kintone",
       "HTML",
       "CSS",
     ],
