@@ -42,6 +42,17 @@ const profileData = [
   { label: "喜び", value: "人に喜んでもらうことができたとき" },
 ];
 
+// 主要な実績データ
+const achievements = [
+  "全国JOCジュニアオリンピック出場経験あり（水泳・フリーリレー）",
+  "北海道アプリコンテスト 北海道経済産業局長賞 受賞",
+  "ITTPC CRLA レベル1チューター資格 取得",
+  "未来大学賞 複数受賞",
+  "学内ハッカソン 複数受賞",
+  "大学パンフレットへの掲載 複数あり",
+  "大学ニュースへの掲載 複数あり",
+];
+
 // 価値観データ
 const values = [
   "水泳時代よりも辛いことはない！",
@@ -278,30 +289,19 @@ export function HeroPage() {
               </h3>
               <div className="bg-muted/30 rounded-lg p-6">
                 <div className="space-y-0">
-                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
-                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                    <span>
-                      全国JOCジュニアオリンピック出場経験あり（水泳・フリーリレー）
-                    </span>
-                  </div>
-                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
-                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                    <span>
-                      北海道アプリコンテスト 北海道経済産業局長賞 受賞
-                    </span>
-                  </div>
-                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
-                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                    <span>ITTPC CRLA レベル1チューター資格 取得</span>
-                  </div>
-                  <div className="flex items-center py-3 border-b border-muted-foreground/20">
-                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                    <span>未来大学賞 複数受賞</span>
-                  </div>
-                  <div className="flex items-center py-3">
-                    <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                    <span>学内ハッカソン 複数受賞</span>
-                  </div>
+                  {achievements.map((achievement, index) => (
+                    <div
+                      key={index}
+                      className={`flex items-center py-3 ${
+                        index < achievements.length - 1
+                          ? "border-b border-muted-foreground/20"
+                          : ""
+                      }`}
+                    >
+                      <Medal className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
+                      <span>{achievement}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

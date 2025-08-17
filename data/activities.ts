@@ -32,20 +32,20 @@ export const activities: Activity[] = [
     title: "【大会期間中のため，取り組みのみ記載】 ETロボコンの画像処理",
     image: "ETロボコン画像処理.png",
     description:
-      "ETロボコンの画像処理担当．チームの定めた機能要件・非機能要件を満たす画像処理を請け負う．方針の決定やモデルに組み込むために，メンバーに説明を行う．",
+      "ETロボコンの画像処理担当．チームの定めた機能要件・非機能要件を満たす画像処理の要素技術を検討・実装する．また，手法の議論や，方針の決定，モデルに組み込むために，説明資料を作成し，メンバーに説明を行う．",
     category: "development",
     tags: [
       "課外活動",
       "開発",
       "チーム活動",
       "個人活動",
-      "アイデア",
       "画像処理",
       "機能要件・非機能要件",
-      "コミュニケーション",
-      "AIコーディング",
+      "アイデア",
       "プレゼン・説明",
       "ドキュメント",
+      "コミュニケーション",
+      "AIコーディング",
       "Python",
     ],
     innovations: [
@@ -66,27 +66,30 @@ export const activities: Activity[] = [
     id: "portfolio-site",
     title: "ポートフォリオサイト作成",
     image: "ポートフォリオ.png",
-    description: "自身の活動を伝えるアプリケーション",
+    description:
+      "自身の人生の軌跡や，取り組んだ活動の内容を伝えるアプリケーション．最速&簡単にアウトプットを出すことを意識し，AIツールを中心として開発・GitHub ActionsによるCI/CDの自動化を行う．",
     category: "development",
     tags: [
       "課外活動",
       "開発",
       "個人活動",
-      "アイデア",
-      "公開・活用",
       "AIコーディング",
+      "GitHub Actions",
+      "GitHub Pages",
+      "公開・活用",
       "Git/GitHub",
       "TypeScript",
       "JavaScript",
       "CSS",
-      "GitHub Actions",
-      "GitHub Pages",
     ],
     innovations: [
-      "GitHub ActionsによるCDの自動化",
+      "GitHub ActionsによるCI/CDの自動化",
       "Vercel v0，GitHub Copilotを活用したコード生成",
+      "タグによる検索で，多数のコンテンツへのアクセスを促す",
+      "シンプルなUIを意識",
+      "派手さよりも，内容の充実を重視",
     ],
-    learnings: ["AIの活用", "CDの自動化の重要性", "自身の活動の振り返り"],
+    learnings: ["AIの活用", "CI/CDの自動化の重要性", "自身の活動の振り返り"],
     achievements: [
       "ポートフォリオサイトの公開",
       "Vercel v0の理解",
@@ -103,7 +106,7 @@ export const activities: Activity[] = [
     title: "調整さん便利ツール",
     image: "調整さん画面.png",
     description:
-      "学習支援組織や飲み会などで使う調整さんの日程入力が楽になるツール．実際に友人たちに使ってもらっているアプリ！",
+      "学習支援組織や飲み会などで使う調整さんの日程入力が楽になるツール．日程は日付を時間を1行づつ入れていくが，日付＋時間で繰り返しの場合が多かった．そこで，それを自動的に作るツールを作成した．実際に友人たちに使ってもらっているアプリです！",
     category: "development",
     tags: [
       "課外活動",
@@ -143,7 +146,7 @@ export const activities: Activity[] = [
 
   {
     id: "ai-mail-anonymization",
-    title: "AIによるメール添削で匿名化",
+    title: "AIによるメール添削の際に匿名化をサポートするツール",
     image: "AIメール添削支援.png",
     description:
       "AIにメール添削をする際に，手動で個人情報を消している友人を見つけた．そこで，それを自動化するツールを作成した．また，自身の開催する開発イベントでプレゼンを行った．",
@@ -157,8 +160,8 @@ export const activities: Activity[] = [
       "公開・活用",
       "形態素解析",
       "自動化・効率化",
-      "AIコーディング",
       "プレゼン・説明",
+      "AIコーディング",
       "Git/GitHub",
       "JavaScript",
       "HTML",
@@ -170,11 +173,7 @@ export const activities: Activity[] = [
       "課題の背景，技術でできること，嬉しさ，開発上の失敗などをプレゼンで説明",
       "アプリの立ち位置を明確にして，あえてAIのAPIを使わない",
     ],
-    learnings: [
-      "プレゼンの構成",
-      "形態素解析の理解",
-      "開発に興味を持ってもらうための開発",
-    ],
+    learnings: ["プレゼンの構成", "形態素解析の理解"],
     achievements: ["ユーザーに使ってもらう", "チーム内発表"],
     links: {
       "プレゼン資料":
@@ -191,7 +190,7 @@ export const activities: Activity[] = [
     title: "バス経路可視化ツール：初ハッカソン",
     image: "バスアプリ.png",
     description:
-      "初挑戦した 「函館の交通問題をハックする」 がテーマのハッカソン．函館のバス路線が見づらいことに着目したプロダクトを作成．実装上のレベルは低いと感じるが，開発の原点です！",
+      "初挑戦した 「函館の交通問題をハックする」 がテーマのハッカソン．函館のバス路線が見づらいことに着目し，バス路線に動きをつけるプロダクトを作成．実装上のレベルは低いと感じるが，開発の原点です！",
     category: "development",
     tags: [
       "課外活動",
@@ -218,8 +217,9 @@ export const activities: Activity[] = [
       "自身の積極性のなさ",
     ],
     achievements: [
-      "ハッカソン最優秀賞受賞（アイデアが主に評価された）",
-      "交流会で社長さんと話す機会があったが何も話せず「こんな素晴らしい機会を活かせない自身の性格は勿体無い！」と思い，自身の行動を変えるきっかけになった",
+      "主にアイデアが評価され，ハッカソン最優秀賞受賞",
+      "（自身の性格への影響）交流会で社長さんと話す機会があったが何も話すことができず 「こんな素晴らしい機会を活かせない自身の性格は勿体無い！」 と思い，自身の行動を変えるきっかけになった",
+      "開発に少し自信を持つ（2ヶ月後に打ち砕かれる）",
     ],
   },
   {
@@ -260,10 +260,10 @@ export const activities: Activity[] = [
     tags: [
       "講義",
       "開発",
-      "リーダーシップ",
       "チーム活動",
-      "フィールドワーク",
       "マリンIT",
+      "リーダーシップ",
+      "フィールドワーク",
       "ヒアリング",
       "コミュニケーション",
       "プレゼン・説明",
@@ -299,14 +299,14 @@ export const activities: Activity[] = [
       "ヒアリング",
       "公開・活用",
       "コミュニケーション",
+      "メールのやり取り",
+      "ドキュメント",
       "Git/GitHub",
       "Ruby on Rails",
       "HTML",
       "Tailwind",
       "CSS",
       "GitHub Actions",
-      "メールのやり取り",
-      "ドキュメント",
     ],
     innovations: [
       "ドメイン知識の理解",
@@ -355,7 +355,7 @@ export const activities: Activity[] = [
       "CSS",
     ],
     innovations: [
-      "初日にメンバーで「個人ごとの目標・目指すものを言語化して共有」、「採点基準の深堀り（なぜそのような配点になっているのか？そこから，どんなことを評価したいのか？）」をし、最終的に「チームの目標（軸）」「役割分担」を決定",
+      "初日にメンバーで「個人ごとの目標・目指すものを言語化して共有」，「採点基準の深堀り（なぜそのような配点になっているのか？そこから，どんなことを評価したいのか？）」を行い，最終的に「チームの目標（軸）」「役割分担」を決定",
       "共通認識を持っている「チームの目標（軸）」に基づいた，意思決定を行った",
       "朝の1分間スピーチで話をする下地を作る",
       "クロージングで 「褒め合い会」 を実施し，１日をプラスで終える",
@@ -373,6 +373,7 @@ export const activities: Activity[] = [
     ],
     links: {
       "GitHub": "https://github.com/FISH-HACKATHON/Fun-i-Con",
+      "ハッカソンの大学ニュース": "https://www.fun.ac.jp/activity/25782",
     },
   },
   {
@@ -425,7 +426,7 @@ export const activities: Activity[] = [
     title: "日報に新しい価値を与えるシステムの検討",
     image: "日報アプリ.png",
     description:
-      "サポート企業のクロスティHDでは，企業が適切に給与を支払うとともに，上司の方が業務内容を把握する目的で，日報をつけている．この日報をただの業務内容の報告ではなく，ナレッジ（仕事のノウハウなど）や日々の学びの蓄積・共有の手段に変えていくアプリケーションの開発を目指している．",
+      "サポート企業のクロスティHDでは，企業が適切に給与を支払うとともに，上司の方が業務内容を把握する目的で，日報をつけている．この日報をただの業務内容の報告ではなく，ナレッジ（仕事のノウハウなど）や日々の学びの蓄積・共有の手段に変えていくアプリケーションの開発を目指している．例えば，1年前に自分で行った業務を思い出す・他の人から引き継いだ業務のやり方を知るなどの目的で利用できると考えている．",
     category: "leadership",
     tags: [
       "課外活動",
@@ -493,6 +494,12 @@ export const activities: Activity[] = [
       "組織内の教育の仕組みの提案",
       "オープンキャンパスへの出展",
     ],
+    links: {
+      "大学HPのメタ学習ラボ紹介ページ": "https://www.fun.ac.jp/meta-leaning",
+      "メタ学習ラボ専用HP": "https://meta-lab.jp/intro/index.html",
+      "共同研究論文":
+        "https://www.jstage.jst.go.jp/article/jsetstudy/2024/4/2024_JSET2024-4-C2/_pdf/-char/ja",
+    },
   },
   {
     id: "oc",
@@ -521,11 +528,15 @@ export const activities: Activity[] = [
       "手軽さの重要性",
     ],
     achievements: ["出展の実現", "高校生や保護者の方々との交流"],
+    links: {
+      "大学HPのオープンキャンパス紹介ページ":
+        "https://www.fun.ac.jp/open-campus2025",
+    },
   },
   {
     id: "cross-team-education-event",
     title: "【失敗】 開発の課外活動のチームを跨いだ教育イベントの企画",
-    image: "OSC企画書.png",
+    image: "グループ.png",
     description:
       "自身が参加している大学の開発演習の課外活動「高度ICT演習」では，学部1年生から修士2年生までの幅広い年齢層が参加している．また，チームに分かれ活動しているが，チーム間で交流する機会はあまりない．加えて，チーム内でリーダーは代替わりされていくが，主要メンバーが抜けてしまうケースもあった．そこで，チームを跨いだ教育イベントを企画した．",
     category: "leadership",
@@ -545,6 +556,10 @@ export const activities: Activity[] = [
     innovations: ["企画書の作成", "各リーダーへの呼びかけ", "教員への説明"],
     learnings: ["仲間集めの重要性", "予算確保の難しさ", "企画の難しさ"],
     achievements: ["実施は現実的でないと判断（失敗）"],
+    links: {
+      "企画書のコピー":
+        "https://docs.google.com/document/d/1cEKXl4hHFtu3a1YPaPEmhxcfpZO6drwK/edit?usp=sharing&ouid=109803715284927477840&rtpof=true&sd=true",
+    },
   },
 
   // 研究の関連活動
@@ -552,7 +567,7 @@ export const activities: Activity[] = [
     id: "corona-tutoring-study",
     title:
       "コロナ前後のチュータリングにおけるチューター・チューティを対象とした印象の検討",
-    image: "印象研究.JPG",
+    image: "印象.png",
     description:
       "所属する自律学習支援組織（メタ学習ラボ）の研究が立ち上がり始まった共同研究の取り組み．チュータリング後アンケートの結果を，コロナ前後で比較し，チューター・チューティの印象の変化を検討した．当時学部4年生の先輩2名と自身（当時学部2年生後期）の3名で2年間取り組んだ．",
     category: "research",
@@ -582,7 +597,7 @@ export const activities: Activity[] = [
   {
     id: "tutoring-before-after-study",
     title: "【取り組み中】 チューターになる前後における意識の変化",
-    image: "チューター前後研究.jpg",
+    image: "成長.png",
     description:
       "自身が経験したメタ学習ラボの共同研究の文化を引き継ぎ，希望者とともに共同研究の立ち上げを行った．現在は自身（修士1年）と修士1年，学部2年の3名と取り組んでいる．内容は，チューターになる前後での意識の変化を調査するものである．",
     category: "research",
@@ -610,6 +625,10 @@ export const activities: Activity[] = [
       "定期的なMTG",
       "（今後の頑張りを記載していきます...！）",
     ],
+    links: {
+      "説明会資料(写してはいけないものは消しています)":
+        "https://docs.google.com/presentation/d/1Y_D-aMfRLiWwzziv8iy_KocvPOOeL7Lv/edit?usp=sharing&ouid=109803715284927477840&rtpof=true&sd=true",
+    },
   },
 
   // 学習支援の関連活動
