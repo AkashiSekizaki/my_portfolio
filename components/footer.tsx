@@ -13,7 +13,8 @@ export function Footer() {
               お気軽にご連絡ください
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              「良い仲間・人に貢献できる仕事・20代からしっかり働ける」 そんな企業様を探しています！
+              「良い仲間・人に貢献できる仕事・20代からしっかり働ける」
+              そんな会社で働きたい！
               <br />
               ご質問やお話の機会がございましたら，お気軽にお声がけください！
             </p>
