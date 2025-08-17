@@ -190,35 +190,29 @@ export function SearchBar({
                     <div className="space-y-2 max-h-60 overflow-y-auto">
                       {searchResults.map((result) => (
                         <div
-                          key={result.id}
-                          className="p-3 border rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
+                          key={`${result.type}-${result.id}`}
+                          className="p-3 rounded-lg border hover:bg-muted/50 cursor-pointer transition-colors"
                           onClick={() => {
                             onResultClick(result);
                             setIsOpen(false);
                           }}
                         >
-                          <div className="flex items-center justify-between mb-1">
-                            <h5 className="font-medium text-sm">
+                          <div className="flex items-center justify-between">
+                            <h5 className="font-medium text-sm line-clamp-1">
                               {result.title}
                             </h5>
-                            <Badge variant="outline" className="text-xs">
-                              {result.category}
+                            <Badge
+                              variant="outline"
+                              className="ml-2 flex-shrink-0"
+                            >
+                              {result.type === "activity"
+                                ? getCategoryLabel([result.category])
+                                : result.category}
                             </Badge>
                           </div>
-                          <div className="flex flex-wrap gap-1">
-                            {result.tags
-                              .filter((tag) => selectedTags.includes(tag))
-                              .slice(0, 4)
-                              .map((tag) => (
-                                <Badge
-                                  key={tag}
-                                  variant="secondary"
-                                  className="text-xs"
-                                >
-                                  {tag}
-                                </Badge>
-                              ))}
-                          </div>
+                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                            {result.description}
+                          </p>
                         </div>
                       ))}
                     </div>
