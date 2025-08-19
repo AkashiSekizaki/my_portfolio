@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 // next/imageの代わりにCustomImageを使用
 import CustomImage from "@/components/ui/custom-image";
 import {
@@ -12,7 +11,7 @@ import {
   Medal,
   Flame,
   School,
-  History,
+  History
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
