@@ -1,21 +1,102 @@
-# Sekizaki Akashi ポートフォリオサイト
+# 関﨑証 - ポートフォリオサイト
 
-### ディレクトリ構成
+> 自身の活動や取り組みを体系的に紹介する Web アプリケーション
+
+🌐 **公開サイト**: https://akashisekizaki.github.io/my_portfolio/
+
+## 📋 概要
+
+公立はこだて未来大学大学院生の関﨑証の活動履歴や実績を紹介するポートフォリオサイトです。開発経験、リーダーシップ、研究活動、学習支援の取り組みを、検索・タグ機能を通じて効率的に閲覧できます。
+
+### 🎯 開発コンセプト
+
+- **最速開発**: AI ツールを活用した効率的な開発
+- **シンプル UI**: 内容重視の分かりやすいデザイン
+- **自動化**: CI/CD による継続的デプロイメント
+
+## ✨ 主な機能
+
+- **🏠 取り組みの紹介**: 開発経験、リーダーシップ、研究活動、学習支援ごと取り組みを見ることができる
+- **🔍 検索機能**: 20 以上の取り組みをタグから検索できる
+- **📱 シェアへの動線**: X へのシェアをボタン 1 つで実現
+- **🎨 Gmail への動線**: 関﨑への Gmail への動線をボタン一つで実現
+
+## 🛠️ 技術スタック
+
+### フロントエンド
+
+AI ツール（Vercel v0）ドリブンで開発を進めることがコンセプトであるため、以下を使用した
+
+- **Next.js 14** - React フレームワーク
+- **TypeScript** - 型安全な開発
+- **Tailwind CSS** - ユーティリティファースト CSS
+- **shadcn/ui** - モダンな UI コンポーネント
+- **Framer Motion** - アニメーション
+
+### 開発・デプロイ
+
+- **GitHub Actions** - CI/CD 自動化
+- **GitHub Pages** - 静的サイトホスティング
+- **Vercel v0** - AI 駆動の UI 生成
+- **GitHub Copilot** - AI コーディング支援
+
+## 🚀 特徴的な取り組み
+
+### 1. AI 活用開発
+
+- Vercel v0 での UI プロトタイプ生成
+- GitHub Copilot によるコード補完
+- 開発速度と品質の両立を実現
+
+### 2. 検索・ナビゲーション
+
+- タグによる検索機能
+- OR 検索によるマルチタグ絞り込み
+- 直感的なユーザー体験
+
+### 3. 自動化されたワークフロー
+
+```yaml
+# GitHub Actions自動デプロイ
+- 📝 コミット → 🔄 ビルド → 🚀 デプロイ
+```
+
+## 📁 プロジェクト構成
 
 ```
-components/
-├── pages/ # ページコンポーネント
-│ ├── hero-page.tsx
-│ ├── development-page.tsx
-│ ├── leadership-page.tsx
-│ ├── research-page.tsx
-│ └── learning-page.tsx
-├── activity-modal.tsx # モーダル
-├── header.tsx # ナビゲーション
-├── footer.tsx # フッター
-├── search-bar.tsx # 検索
-├── slideshow.tsx # スライドショー
-├── sticky-content-layout.tsx # レイアウト
-├── sliding-related-activities.tsx # 関連活動
-└── ui/ # UI コンポーネント
+├── app/                    # Next.js App Router
+├── components/
+│   ├── pages/             # ページコンポーネント
+│   ├── ui/                # UIコンポーネント
+│   ├── activity-modal.tsx # 活動詳細モーダル
+│   ├── header.tsx         # ナビゲーション
+│   ├── search-bar.tsx     # 検索機能
+│   └── ...
+├── data/                  # データ定義
+├── public/                # 静的ファイル（画像ファイル）
+└── types/                 # TypeScript型定義
 ```
+
+## 🎯 成果・学び
+
+### 実績
+
+- ✅ ポートフォリオサイトの公開
+- ✅ GitHub Actions による自動デプロイ環境構築
+- ✅ モダンな Web 技術の習得
+
+### 学び
+
+- 🤖 **AI 活用**: 開発効率化のためのツール選択と活用法
+- ⚙️ **CI/CD**: 自動化による開発プロセスの改善
+- 🔄 **振り返り**: 自身の活動を体系化する重要性
+
+## 📞 連絡先
+
+- **Email**: g2125042@fun.ac.jp
+- **GitHub**: [@AkashiSekizaki](https://github.com/AkashiSekizaki)
+- **大学**: 公立はこだて未来大学大学院
+
+---
+
+💡 **このポートフォリオは就職活動用に作成しました。本サイトについてや、[公開サイト](https://akashisekizaki.github.io/my_portfolio/)に記載のある取り組みについて、直接お話できる機会をいただけますと幸いです！**
