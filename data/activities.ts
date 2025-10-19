@@ -29,7 +29,7 @@ export const activities: Activity[] = [
   // 開発経験の関連活動
   {
     id: "et-robo",
-    title: "【大会期間中のため，取り組みのみ記載】 ETロボコンの画像処理",
+    title: "ETロボコンの画像処理",
     image: "ETロボコン画像処理.png",
     description:
       "ETロボコンの画像処理担当．チームの定めた機能要件・非機能要件を満たす画像処理の要素技術を検討・実装する．また，手法の議論や，方針の決定，モデルに組み込むために，説明資料を作成し，メンバーに説明を行う．",
@@ -60,7 +60,7 @@ export const activities: Activity[] = [
       "古典的な画像処理の理解",
       "メンバーとのコミュニケーションの重要性",
     ],
-    achievements: ["手法説明スライド複数作成", "大会結果をお待ちください...！"],
+    achievements: ["手法説明スライド複数作成"],
   },
   {
     id: "portfolio-site",
